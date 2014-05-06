@@ -1,0 +1,68 @@
+animal
+apex predator
+autotroph
+bacterium
+calorie
+carnivore
+carnivorous
+chain
+consume
+consumer
+comsumption efficiency
+decomposer
+detrivore
+diet
+eat
+efficiency
+energy
+energy transfer
+equilibrium
+filter feeder
+folivore (leaf-eater)
+food
+food chain
+food cycle
+food network
+food web
+frigivore (fruit-eater)
+fungus
+granivore (seed-eater)
+herbivore
+herbivorous
+heterotroph
+hypercarnivore
+hypocarnivore
+ingest
+insectivore
+insectivorous
+meat-eater
+mesocarnivore
+mucivores (sap eater)
+necativore (nectar-eater)
+obligate carnivore
+omnivore
+omnivorous
+organism
+palynivores (pollen eater)
+photosynthesis
+phytoplankton
+piscivore
+plant
+plant-eater
+predation
+predator
+prey
+primary consumer
+primary producer
+production efficiency
+quaternary consumer
+scavenge
+scavenger
+secondary consmer
+tertiary consumer
+top predator
+trophic level
+vegetarian
+web
+xylophage (wood eater)
+zooplankton

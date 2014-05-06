@@ -12,6 +12,9 @@
 
 + (MNDataObject *)sharedDataObject;
 
-//@property(strong, nonatomic) NSMutableArray
+@property(strong, nonatomic) NSMutableArray *teamNames;
+@property(strong, nonatomic) NSMutableArray *teamScores;
+@property(strong, nonatomic) NSString *category;
+@property(strong, nonatomic) NSMutableArray *words;
 
 @end

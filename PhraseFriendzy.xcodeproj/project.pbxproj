@@ -31,6 +31,152 @@
 		1A9B366F19186292003FC375 /* MNEndOfRoundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B366E19186292003FC375 /* MNEndOfRoundTableViewController.m */; };
 		1A9B3672191862AB003FC375 /* MNWinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B3671191862AB003FC375 /* MNWinnerViewController.m */; };
 		1A9B367619186562003FC375 /* MNDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B367519186562003FC375 /* MNDataObject.m */; };
+		1A9B370A1919AA77003FC375 /* Adjectives.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36781919AA77003FC375 /* Adjectives.txt */; };
+		1A9B370B1919AA77003FC375 /* Adverbs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36791919AA77003FC375 /* Adverbs.txt */; };
+		1A9B370C1919AA77003FC375 /* Alliterations.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B367A1919AA77003FC375 /* Alliterations.txt */; };
+		1A9B370D1919AA77003FC375 /* Amphibians.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B367B1919AA77003FC375 /* Amphibians.txt */; };
+		1A9B370E1919AA77003FC375 /* Anagrams.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B367C1919AA77003FC375 /* Anagrams.txt */; };
+		1A9B370F1919AA77003FC375 /* Animals.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B367D1919AA77003FC375 /* Animals.txt */; };
+		1A9B37101919AA77003FC375 /* Antonyms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B367E1919AA77003FC375 /* Antonyms.txt */; };
+		1A9B37111919AA77003FC375 /* April Fools.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B367F1919AA77003FC375 /* April Fools.txt */; };
+		1A9B37121919AA77003FC375 /* Art.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36801919AA77003FC375 /* Art.txt */; };
+		1A9B37131919AA77003FC375 /* Astronomy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36811919AA77003FC375 /* Astronomy.txt */; };
+		1A9B37141919AA77003FC375 /* Autumn.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36821919AA77003FC375 /* Autumn.txt */; };
+		1A9B37151919AA77003FC375 /* Backyard.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36831919AA77003FC375 /* Backyard.txt */; };
+		1A9B37161919AA77003FC375 /* Baseball.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36841919AA77003FC375 /* Baseball.txt */; };
+		1A9B37171919AA77003FC375 /* Bathroom.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36851919AA77003FC375 /* Bathroom.txt */; };
+		1A9B37181919AA77003FC375 /* Beach.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36861919AA77003FC375 /* Beach.txt */; };
+		1A9B37191919AA77003FC375 /* Big.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36871919AA77003FC375 /* Big.txt */; };
+		1A9B371A1919AA77003FC375 /* Biomes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36881919AA77003FC375 /* Biomes.txt */; };
+		1A9B371B1919AA77003FC375 /* Birds.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36891919AA77003FC375 /* Birds.txt */; };
+		1A9B371C1919AA77003FC375 /* Birthday.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B368A1919AA77003FC375 /* Birthday.txt */; };
+		1A9B371D1919AA77003FC375 /* Boats And Ships.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B368B1919AA77003FC375 /* Boats And Ships.txt */; };
+		1A9B371E1919AA77003FC375 /* Body.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B368C1919AA77003FC375 /* Body.txt */; };
+		1A9B371F1919AA77003FC375 /* Buildings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B368D1919AA77003FC375 /* Buildings.txt */; };
+		1A9B37201919AA77003FC375 /* Business And Office.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B368E1919AA77003FC375 /* Business And Office.txt */; };
+		1A9B37211919AA77003FC375 /* Camping.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B368F1919AA77003FC375 /* Camping.txt */; };
+		1A9B37221919AA77003FC375 /* Car Parts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36901919AA77003FC375 /* Car Parts.txt */; };
+		1A9B37231919AA77003FC375 /* Carnivals And Fairs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36911919AA77003FC375 /* Carnivals And Fairs.txt */; };
+		1A9B37241919AA77003FC375 /* Cars.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36921919AA77003FC375 /* Cars.txt */; };
+		1A9B37251919AA77003FC375 /* Castlels, Kings, And Queens.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36931919AA77003FC375 /* Castlels, Kings, And Queens.txt */; };
+		1A9B37261919AA77003FC375 /* Cats.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36941919AA77003FC375 /* Cats.txt */; };
+		1A9B37271919AA77003FC375 /* Chinese New Year.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36951919AA77003FC375 /* Chinese New Year.txt */; };
+		1A9B37281919AA77003FC375 /* Christmas.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36961919AA77003FC375 /* Christmas.txt */; };
+		1A9B37291919AA77003FC375 /* Circus And Fairs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36971919AA77003FC375 /* Circus And Fairs.txt */; };
+		1A9B372A1919AA77003FC375 /* Clothing.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36981919AA77003FC375 /* Clothing.txt */; };
+		1A9B372B1919AA77003FC375 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36991919AA77003FC375 /* Colors.txt */; };
+		1A9B372C1919AA77003FC375 /* Columbus Day.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B369A1919AA77003FC375 /* Columbus Day.txt */; };
+		1A9B372D1919AA77003FC375 /* Compound Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B369B1919AA77003FC375 /* Compound Words.txt */; };
+		1A9B372E1919AA77003FC375 /* Computers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B369C1919AA77003FC375 /* Computers.txt */; };
+		1A9B372F1919AA77003FC375 /* Conjunctions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B369D1919AA77003FC375 /* Conjunctions.txt */; };
+		1A9B37301919AA77003FC375 /* Constitution.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B369E1919AA77003FC375 /* Constitution.txt */; };
+		1A9B37311919AA77003FC375 /* Containers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B369F1919AA77003FC375 /* Containers.txt */; };
+		1A9B37321919AA77003FC375 /* Cooking Terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A01919AA77003FC375 /* Cooking Terms.txt */; };
+		1A9B37331919AA77003FC375 /* Cooking Tools.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A11919AA77003FC375 /* Cooking Tools.txt */; };
+		1A9B37341919AA77003FC375 /* Countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A21919AA77003FC375 /* Countries.txt */; };
+		1A9B37351919AA77003FC375 /* Dances.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A31919AA77003FC375 /* Dances.txt */; };
+		1A9B37361919AA77003FC375 /* Dentist.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A41919AA77003FC375 /* Dentist.txt */; };
+		1A9B37371919AA77003FC375 /* Doctor.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A51919AA77003FC375 /* Doctor.txt */; };
+		1A9B37381919AA77003FC375 /* Dogs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A61919AA77003FC375 /* Dogs.txt */; };
+		1A9B37391919AA77003FC375 /* Dolch Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A71919AA77003FC375 /* Dolch Words.txt */; };
+		1A9B373A1919AA77003FC375 /* Driving.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A81919AA77003FC375 /* Driving.txt */; };
+		1A9B373B1919AA77003FC375 /* Duos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36A91919AA77003FC375 /* Duos.txt */; };
+		1A9B373C1919AA77003FC375 /* Election.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36AA1919AA77003FC375 /* Election.txt */; };
+		1A9B373D1919AA77003FC375 /* Elements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36AB1919AA77003FC375 /* Elements.txt */; };
+		1A9B373E1919AA77003FC375 /* Emotions and Feelings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36AC1919AA77003FC375 /* Emotions and Feelings.txt */; };
+		1A9B373F1919AA77003FC375 /* Energy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36AD1919AA77003FC375 /* Energy.txt */; };
+		1A9B37401919AA77003FC375 /* Family.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36AE1919AA77003FC375 /* Family.txt */; };
+		1A9B37411919AA77003FC375 /* Farm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36AF1919AA77003FC375 /* Farm.txt */; };
+		1A9B37421919AA77003FC375 /* Firefighting.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B01919AA77003FC375 /* Firefighting.txt */; };
+		1A9B37431919AA77003FC375 /* Fish.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B11919AA77003FC375 /* Fish.txt */; };
+		1A9B37441919AA77003FC375 /* Flowers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B21919AA77003FC375 /* Flowers.txt */; };
+		1A9B37451919AA77003FC375 /* Food.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B31919AA77003FC375 /* Food.txt */; };
+		1A9B37461919AA77003FC375 /* Food Web: Food Chain.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B41919AA77003FC375 /* Food Web: Food Chain.txt */; };
+		1A9B37471919AA77003FC375 /* Friends, Acquaintances and Other People.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B51919AA77003FC375 /* Friends, Acquaintances and Other People.txt */; };
+		1A9B37481919AA77003FC375 /* Fruit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B61919AA77003FC375 /* Fruit.txt */; };
+		1A9B37491919AA77003FC375 /* Furniture.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B71919AA77003FC375 /* Furniture.txt */; };
+		1A9B374A1919AA77003FC375 /* Geography.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B81919AA77003FC375 /* Geography.txt */; };
+		1A9B374B1919AA77003FC375 /* Good Luck.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36B91919AA77003FC375 /* Good Luck.txt */; };
+		1A9B374C1919AA77003FC375 /* Grammar Terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36BA1919AA77003FC375 /* Grammar Terms.txt */; };
+		1A9B374D1919AA77003FC375 /* Groundhog Day.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36BB1919AA77003FC375 /* Groundhog Day.txt */; };
+		1A9B374E1919AA77003FC375 /* Halloween.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36BC1919AA77003FC375 /* Halloween.txt */; };
+		1A9B374F1919AA77003FC375 /* Happy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36BD1919AA77003FC375 /* Happy.txt */; };
+		1A9B37501919AA77003FC375 /* Hats.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36BE1919AA77003FC375 /* Hats.txt */; };
+		1A9B37511919AA77003FC375 /* Herbs and Spices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36BF1919AA77003FC375 /* Herbs and Spices.txt */; };
+		1A9B37521919AA77003FC375 /* Holidays.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C01919AA77003FC375 /* Holidays.txt */; };
+		1A9B37531919AA77003FC375 /* House.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C11919AA77003FC375 /* House.txt */; };
+		1A9B37541919AA77003FC375 /* Household Devices.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C21919AA77003FC375 /* Household Devices.txt */; };
+		1A9B37551919AA77003FC375 /* Idioms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C31919AA77003FC375 /* Idioms.txt */; };
+		1A9B37561919AA77003FC375 /* Insects And Bugs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C41919AA77003FC375 /* Insects And Bugs.txt */; };
+		1A9B37571919AA77003FC375 /* Interjections.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C51919AA77003FC375 /* Interjections.txt */; };
+		1A9B37581919AA77003FC375 /* Jobs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C61919AA77003FC375 /* Jobs.txt */; };
+		1A9B37591919AA77003FC375 /* Landforms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C71919AA77003FC375 /* Landforms.txt */; };
+		1A9B375A1919AA77003FC375 /* Languages.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C81919AA77003FC375 /* Languages.txt */; };
+		1A9B375B1919AA77003FC375 /* Leaders.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36C91919AA77003FC375 /* Leaders.txt */; };
+		1A9B375C1919AA77003FC375 /* Legal Terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36CA1919AA77003FC375 /* Legal Terms.txt */; };
+		1A9B375D1919AA77003FC375 /* Long E Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36CB1919AA77003FC375 /* Long E Words.txt */; };
+		1A9B375E1919AA77003FC375 /* Long U Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36CC1919AA77003FC375 /* Long U Words.txt */; };
+		1A9B375F1919AA77003FC375 /* Mammals.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36CD1919AA77003FC375 /* Mammals.txt */; };
+		1A9B37601919AA77003FC375 /* Many.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36CE1919AA77003FC375 /* Many.txt */; };
+		1A9B37611919AA77003FC375 /* Martin Luther King Jr..txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36CF1919AA77003FC375 /* Martin Luther King Jr..txt */; };
+		1A9B37621919AA77003FC375 /* Math And Numbers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D01919AA77003FC375 /* Math And Numbers.txt */; };
+		1A9B37631919AA77003FC375 /* Measurement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D11919AA77003FC375 /* Measurement.txt */; };
+		1A9B37641919AA77003FC375 /* Metals.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D21919AA77003FC375 /* Metals.txt */; };
+		1A9B37651919AA77003FC375 /* Military.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D31919AA77003FC375 /* Military.txt */; };
+		1A9B37661919AA77003FC375 /* Money.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D41919AA77003FC375 /* Money.txt */; };
+		1A9B37671919AA77003FC375 /* Mother's Day.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D51919AA77003FC375 /* Mother's Day.txt */; };
+		1A9B37681919AA77003FC375 /* Music Theory.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D61919AA77003FC375 /* Music Theory.txt */; };
+		1A9B37691919AA77003FC375 /* Musical Instruments.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D71919AA77003FC375 /* Musical Instruments.txt */; };
+		1A9B376A1919AA77003FC375 /* Negative Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D81919AA77003FC375 /* Negative Words.txt */; };
+		1A9B376B1919AA77003FC375 /* New Years.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36D91919AA77003FC375 /* New Years.txt */; };
+		1A9B376C1919AA77003FC375 /* Nouns That Are Verbs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36DA1919AA77003FC375 /* Nouns That Are Verbs.txt */; };
+		1A9B376D1919AA77003FC375 /* Ocean.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36DB1919AA77003FC375 /* Ocean.txt */; };
+		1A9B376E1919AA77003FC375 /* Palindromes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36DC1919AA77003FC375 /* Palindromes.txt */; };
+		1A9B376F1919AA77003FC375 /* Personal Qualities.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36DD1919AA77003FC375 /* Personal Qualities.txt */; };
+		1A9B37701919AA77003FC375 /* Phrasebook.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36DE1919AA77003FC375 /* Phrasebook.txt */; };
+		1A9B37711919AA77003FC375 /* Phrases.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36DF1919AA77003FC375 /* Phrases.txt */; };
+		1A9B37721919AA77003FC375 /* Pirate.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E01919AA77003FC375 /* Pirate.txt */; };
+		1A9B37731919AA77003FC375 /* Plants.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E11919AA77003FC375 /* Plants.txt */; };
+		1A9B37741919AA77003FC375 /* Positive Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E21919AA77003FC375 /* Positive Words.txt */; };
+		1A9B37751919AA77003FC375 /* Post Office.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E31919AA77003FC375 /* Post Office.txt */; };
+		1A9B37761919AA77003FC375 /* Prepositions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E41919AA77003FC375 /* Prepositions.txt */; };
+		1A9B37771919AA77003FC375 /* President's Day.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E51919AA77003FC375 /* President's Day.txt */; };
+		1A9B37781919AA77003FC375 /* Pronouns.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E61919AA77003FC375 /* Pronouns.txt */; };
+		1A9B37791919AA77003FC375 /* Proverbs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E71919AA77003FC375 /* Proverbs.txt */; };
+		1A9B377A1919AA77003FC375 /* Reptiles.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E81919AA77003FC375 /* Reptiles.txt */; };
+		1A9B377B1919AA77003FC375 /* Restaurant.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36E91919AA77003FC375 /* Restaurant.txt */; };
+		1A9B377C1919AA77003FC375 /* Roadways.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36EA1919AA77003FC375 /* Roadways.txt */; };
+		1A9B377D1919AA77003FC375 /* Rocks And Minerals.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36EB1919AA77003FC375 /* Rocks And Minerals.txt */; };
+		1A9B377E1919AA77003FC375 /* Rooms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36EC1919AA77003FC375 /* Rooms.txt */; };
+		1A9B377F1919AA77003FC375 /* Said.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36ED1919AA77003FC375 /* Said.txt */; };
+		1A9B37801919AA77003FC375 /* School.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36EE1919AA77003FC375 /* School.txt */; };
+		1A9B37811919AA77003FC375 /* Science.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36EF1919AA77003FC375 /* Science.txt */; };
+		1A9B37821919AA77003FC375 /* Sewing.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F01919AA77003FC375 /* Sewing.txt */; };
+		1A9B37831919AA77003FC375 /* Shapes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F11919AA77003FC375 /* Shapes.txt */; };
+		1A9B37841919AA77003FC375 /* Shoes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F21919AA77003FC375 /* Shoes.txt */; };
+		1A9B37851919AA77003FC375 /* Spieces And Herbs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F31919AA77003FC375 /* Spieces And Herbs.txt */; };
+		1A9B37861919AA77003FC375 /* Sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F41919AA77003FC375 /* Sports.txt */; };
+		1A9B37871919AA77003FC375 /* Spring.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F51919AA77003FC375 /* Spring.txt */; };
+		1A9B37881919AA77003FC375 /* St. Patricks Day.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F61919AA77003FC375 /* St. Patricks Day.txt */; };
+		1A9B37891919AA77003FC375 /* Stores And Publilc Buildings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F71919AA77003FC375 /* Stores And Publilc Buildings.txt */; };
+		1A9B378A1919AA77003FC375 /* Summer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F81919AA77003FC375 /* Summer.txt */; };
+		1A9B378B1919AA77003FC375 /* Sweets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36F91919AA77003FC375 /* Sweets.txt */; };
+		1A9B378C1919AA77003FC375 /* Thanksgiving.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36FA1919AA77003FC375 /* Thanksgiving.txt */; };
+		1A9B378D1919AA77003FC375 /* Time.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36FB1919AA77003FC375 /* Time.txt */; };
+		1A9B378E1919AA77003FC375 /* Tools.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36FC1919AA77003FC375 /* Tools.txt */; };
+		1A9B378F1919AA77003FC375 /* Transportation And Vehicles.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36FD1919AA77003FC375 /* Transportation And Vehicles.txt */; };
+		1A9B37901919AA77003FC375 /* Trees.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36FE1919AA77003FC375 /* Trees.txt */; };
+		1A9B37911919AA77003FC375 /* US Flag Day.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B36FF1919AA77003FC375 /* US Flag Day.txt */; };
+		1A9B37921919AA77003FC375 /* US States.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37001919AA77003FC375 /* US States.txt */; };
+		1A9B37931919AA77003FC375 /* Vacation.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37011919AA77003FC375 /* Vacation.txt */; };
+		1A9B37941919AA77003FC375 /* Valentine's Day.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37021919AA77003FC375 /* Valentine's Day.txt */; };
+		1A9B37951919AA77003FC375 /* Vegetables.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37031919AA77003FC375 /* Vegetables.txt */; };
+		1A9B37961919AA77003FC375 /* Verbs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37041919AA77003FC375 /* Verbs.txt */; };
+		1A9B37971919AA77003FC375 /* Virtues.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37051919AA77003FC375 /* Virtues.txt */; };
+		1A9B37981919AA77003FC375 /* Water.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37061919AA77003FC375 /* Water.txt */; };
+		1A9B37991919AA77003FC375 /* Weapons.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37071919AA77003FC375 /* Weapons.txt */; };
+		1A9B379A1919AA77003FC375 /* Weather.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37081919AA77003FC375 /* Weather.txt */; };
+		1A9B379B1919AA77003FC375 /* Winter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37091919AA77003FC375 /* Winter.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +228,152 @@
 		1A9B3671191862AB003FC375 /* MNWinnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNWinnerViewController.m; sourceTree = "<group>"; };
 		1A9B367419186562003FC375 /* MNDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNDataObject.h; sourceTree = "<group>"; };
 		1A9B367519186562003FC375 /* MNDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNDataObject.m; sourceTree = "<group>"; };
+		1A9B36781919AA77003FC375 /* Adjectives.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Adjectives.txt; sourceTree = "<group>"; };
+		1A9B36791919AA77003FC375 /* Adverbs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Adverbs.txt; sourceTree = "<group>"; };
+		1A9B367A1919AA77003FC375 /* Alliterations.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Alliterations.txt; sourceTree = "<group>"; };
+		1A9B367B1919AA77003FC375 /* Amphibians.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Amphibians.txt; sourceTree = "<group>"; };
+		1A9B367C1919AA77003FC375 /* Anagrams.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Anagrams.txt; sourceTree = "<group>"; };
+		1A9B367D1919AA77003FC375 /* Animals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Animals.txt; sourceTree = "<group>"; };
+		1A9B367E1919AA77003FC375 /* Antonyms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Antonyms.txt; sourceTree = "<group>"; };
+		1A9B367F1919AA77003FC375 /* April Fools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "April Fools.txt"; sourceTree = "<group>"; };
+		1A9B36801919AA77003FC375 /* Art.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Art.txt; sourceTree = "<group>"; };
+		1A9B36811919AA77003FC375 /* Astronomy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Astronomy.txt; sourceTree = "<group>"; };
+		1A9B36821919AA77003FC375 /* Autumn.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Autumn.txt; sourceTree = "<group>"; };
+		1A9B36831919AA77003FC375 /* Backyard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Backyard.txt; sourceTree = "<group>"; };
+		1A9B36841919AA77003FC375 /* Baseball.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Baseball.txt; sourceTree = "<group>"; };
+		1A9B36851919AA77003FC375 /* Bathroom.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bathroom.txt; sourceTree = "<group>"; };
+		1A9B36861919AA77003FC375 /* Beach.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Beach.txt; sourceTree = "<group>"; };
+		1A9B36871919AA77003FC375 /* Big.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Big.txt; sourceTree = "<group>"; };
+		1A9B36881919AA77003FC375 /* Biomes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Biomes.txt; sourceTree = "<group>"; };
+		1A9B36891919AA77003FC375 /* Birds.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Birds.txt; sourceTree = "<group>"; };
+		1A9B368A1919AA77003FC375 /* Birthday.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Birthday.txt; sourceTree = "<group>"; };
+		1A9B368B1919AA77003FC375 /* Boats And Ships.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Boats And Ships.txt"; sourceTree = "<group>"; };
+		1A9B368C1919AA77003FC375 /* Body.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Body.txt; sourceTree = "<group>"; };
+		1A9B368D1919AA77003FC375 /* Buildings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Buildings.txt; sourceTree = "<group>"; };
+		1A9B368E1919AA77003FC375 /* Business And Office.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Business And Office.txt"; sourceTree = "<group>"; };
+		1A9B368F1919AA77003FC375 /* Camping.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Camping.txt; sourceTree = "<group>"; };
+		1A9B36901919AA77003FC375 /* Car Parts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Car Parts.txt"; sourceTree = "<group>"; };
+		1A9B36911919AA77003FC375 /* Carnivals And Fairs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Carnivals And Fairs.txt"; sourceTree = "<group>"; };
+		1A9B36921919AA77003FC375 /* Cars.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cars.txt; sourceTree = "<group>"; };
+		1A9B36931919AA77003FC375 /* Castlels, Kings, And Queens.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Castlels, Kings, And Queens.txt"; sourceTree = "<group>"; };
+		1A9B36941919AA77003FC375 /* Cats.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cats.txt; sourceTree = "<group>"; };
+		1A9B36951919AA77003FC375 /* Chinese New Year.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Chinese New Year.txt"; sourceTree = "<group>"; };
+		1A9B36961919AA77003FC375 /* Christmas.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Christmas.txt; sourceTree = "<group>"; };
+		1A9B36971919AA77003FC375 /* Circus And Fairs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Circus And Fairs.txt"; sourceTree = "<group>"; };
+		1A9B36981919AA77003FC375 /* Clothing.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Clothing.txt; sourceTree = "<group>"; };
+		1A9B36991919AA77003FC375 /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
+		1A9B369A1919AA77003FC375 /* Columbus Day.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Columbus Day.txt"; sourceTree = "<group>"; };
+		1A9B369B1919AA77003FC375 /* Compound Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Compound Words.txt"; sourceTree = "<group>"; };
+		1A9B369C1919AA77003FC375 /* Computers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Computers.txt; sourceTree = "<group>"; };
+		1A9B369D1919AA77003FC375 /* Conjunctions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Conjunctions.txt; sourceTree = "<group>"; };
+		1A9B369E1919AA77003FC375 /* Constitution.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Constitution.txt; sourceTree = "<group>"; };
+		1A9B369F1919AA77003FC375 /* Containers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Containers.txt; sourceTree = "<group>"; };
+		1A9B36A01919AA77003FC375 /* Cooking Terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Cooking Terms.txt"; sourceTree = "<group>"; };
+		1A9B36A11919AA77003FC375 /* Cooking Tools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Cooking Tools.txt"; sourceTree = "<group>"; };
+		1A9B36A21919AA77003FC375 /* Countries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countries.txt; sourceTree = "<group>"; };
+		1A9B36A31919AA77003FC375 /* Dances.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dances.txt; sourceTree = "<group>"; };
+		1A9B36A41919AA77003FC375 /* Dentist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dentist.txt; sourceTree = "<group>"; };
+		1A9B36A51919AA77003FC375 /* Doctor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Doctor.txt; sourceTree = "<group>"; };
+		1A9B36A61919AA77003FC375 /* Dogs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dogs.txt; sourceTree = "<group>"; };
+		1A9B36A71919AA77003FC375 /* Dolch Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Dolch Words.txt"; sourceTree = "<group>"; };
+		1A9B36A81919AA77003FC375 /* Driving.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Driving.txt; sourceTree = "<group>"; };
+		1A9B36A91919AA77003FC375 /* Duos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Duos.txt; sourceTree = "<group>"; };
+		1A9B36AA1919AA77003FC375 /* Election.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Election.txt; sourceTree = "<group>"; };
+		1A9B36AB1919AA77003FC375 /* Elements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Elements.txt; sourceTree = "<group>"; };
+		1A9B36AC1919AA77003FC375 /* Emotions and Feelings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Emotions and Feelings.txt"; sourceTree = "<group>"; };
+		1A9B36AD1919AA77003FC375 /* Energy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Energy.txt; sourceTree = "<group>"; };
+		1A9B36AE1919AA77003FC375 /* Family.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Family.txt; sourceTree = "<group>"; };
+		1A9B36AF1919AA77003FC375 /* Farm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Farm.txt; sourceTree = "<group>"; };
+		1A9B36B01919AA77003FC375 /* Firefighting.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Firefighting.txt; sourceTree = "<group>"; };
+		1A9B36B11919AA77003FC375 /* Fish.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fish.txt; sourceTree = "<group>"; };
+		1A9B36B21919AA77003FC375 /* Flowers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Flowers.txt; sourceTree = "<group>"; };
+		1A9B36B31919AA77003FC375 /* Food.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Food.txt; sourceTree = "<group>"; };
+		1A9B36B41919AA77003FC375 /* Food Web: Food Chain.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Food Web: Food Chain.txt"; sourceTree = "<group>"; };
+		1A9B36B51919AA77003FC375 /* Friends, Acquaintances and Other People.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Friends, Acquaintances and Other People.txt"; sourceTree = "<group>"; };
+		1A9B36B61919AA77003FC375 /* Fruit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fruit.txt; sourceTree = "<group>"; };
+		1A9B36B71919AA77003FC375 /* Furniture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Furniture.txt; sourceTree = "<group>"; };
+		1A9B36B81919AA77003FC375 /* Geography.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Geography.txt; sourceTree = "<group>"; };
+		1A9B36B91919AA77003FC375 /* Good Luck.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Good Luck.txt"; sourceTree = "<group>"; };
+		1A9B36BA1919AA77003FC375 /* Grammar Terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Grammar Terms.txt"; sourceTree = "<group>"; };
+		1A9B36BB1919AA77003FC375 /* Groundhog Day.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Groundhog Day.txt"; sourceTree = "<group>"; };
+		1A9B36BC1919AA77003FC375 /* Halloween.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Halloween.txt; sourceTree = "<group>"; };
+		1A9B36BD1919AA77003FC375 /* Happy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Happy.txt; sourceTree = "<group>"; };
+		1A9B36BE1919AA77003FC375 /* Hats.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hats.txt; sourceTree = "<group>"; };
+		1A9B36BF1919AA77003FC375 /* Herbs and Spices.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Herbs and Spices.txt"; sourceTree = "<group>"; };
+		1A9B36C01919AA77003FC375 /* Holidays.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Holidays.txt; sourceTree = "<group>"; };
+		1A9B36C11919AA77003FC375 /* House.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = House.txt; sourceTree = "<group>"; };
+		1A9B36C21919AA77003FC375 /* Household Devices.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Household Devices.txt"; sourceTree = "<group>"; };
+		1A9B36C31919AA77003FC375 /* Idioms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Idioms.txt; sourceTree = "<group>"; };
+		1A9B36C41919AA77003FC375 /* Insects And Bugs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Insects And Bugs.txt"; sourceTree = "<group>"; };
+		1A9B36C51919AA77003FC375 /* Interjections.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Interjections.txt; sourceTree = "<group>"; };
+		1A9B36C61919AA77003FC375 /* Jobs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Jobs.txt; sourceTree = "<group>"; };
+		1A9B36C71919AA77003FC375 /* Landforms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Landforms.txt; sourceTree = "<group>"; };
+		1A9B36C81919AA77003FC375 /* Languages.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Languages.txt; sourceTree = "<group>"; };
+		1A9B36C91919AA77003FC375 /* Leaders.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Leaders.txt; sourceTree = "<group>"; };
+		1A9B36CA1919AA77003FC375 /* Legal Terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Legal Terms.txt"; sourceTree = "<group>"; };
+		1A9B36CB1919AA77003FC375 /* Long E Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Long E Words.txt"; sourceTree = "<group>"; };
+		1A9B36CC1919AA77003FC375 /* Long U Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Long U Words.txt"; sourceTree = "<group>"; };
+		1A9B36CD1919AA77003FC375 /* Mammals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mammals.txt; sourceTree = "<group>"; };
+		1A9B36CE1919AA77003FC375 /* Many.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Many.txt; sourceTree = "<group>"; };
+		1A9B36CF1919AA77003FC375 /* Martin Luther King Jr..txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Martin Luther King Jr..txt"; sourceTree = "<group>"; };
+		1A9B36D01919AA77003FC375 /* Math And Numbers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Math And Numbers.txt"; sourceTree = "<group>"; };
+		1A9B36D11919AA77003FC375 /* Measurement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Measurement.txt; sourceTree = "<group>"; };
+		1A9B36D21919AA77003FC375 /* Metals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Metals.txt; sourceTree = "<group>"; };
+		1A9B36D31919AA77003FC375 /* Military.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Military.txt; sourceTree = "<group>"; };
+		1A9B36D41919AA77003FC375 /* Money.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Money.txt; sourceTree = "<group>"; };
+		1A9B36D51919AA77003FC375 /* Mother's Day.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Mother's Day.txt"; sourceTree = "<group>"; };
+		1A9B36D61919AA77003FC375 /* Music Theory.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Music Theory.txt"; sourceTree = "<group>"; };
+		1A9B36D71919AA77003FC375 /* Musical Instruments.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Musical Instruments.txt"; sourceTree = "<group>"; };
+		1A9B36D81919AA77003FC375 /* Negative Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Negative Words.txt"; sourceTree = "<group>"; };
+		1A9B36D91919AA77003FC375 /* New Years.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "New Years.txt"; sourceTree = "<group>"; };
+		1A9B36DA1919AA77003FC375 /* Nouns That Are Verbs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Nouns That Are Verbs.txt"; sourceTree = "<group>"; };
+		1A9B36DB1919AA77003FC375 /* Ocean.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ocean.txt; sourceTree = "<group>"; };
+		1A9B36DC1919AA77003FC375 /* Palindromes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Palindromes.txt; sourceTree = "<group>"; };
+		1A9B36DD1919AA77003FC375 /* Personal Qualities.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Personal Qualities.txt"; sourceTree = "<group>"; };
+		1A9B36DE1919AA77003FC375 /* Phrasebook.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Phrasebook.txt; sourceTree = "<group>"; };
+		1A9B36DF1919AA77003FC375 /* Phrases.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Phrases.txt; sourceTree = "<group>"; };
+		1A9B36E01919AA77003FC375 /* Pirate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pirate.txt; sourceTree = "<group>"; };
+		1A9B36E11919AA77003FC375 /* Plants.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Plants.txt; sourceTree = "<group>"; };
+		1A9B36E21919AA77003FC375 /* Positive Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Positive Words.txt"; sourceTree = "<group>"; };
+		1A9B36E31919AA77003FC375 /* Post Office.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Post Office.txt"; sourceTree = "<group>"; };
+		1A9B36E41919AA77003FC375 /* Prepositions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Prepositions.txt; sourceTree = "<group>"; };
+		1A9B36E51919AA77003FC375 /* President's Day.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "President's Day.txt"; sourceTree = "<group>"; };
+		1A9B36E61919AA77003FC375 /* Pronouns.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pronouns.txt; sourceTree = "<group>"; };
+		1A9B36E71919AA77003FC375 /* Proverbs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Proverbs.txt; sourceTree = "<group>"; };
+		1A9B36E81919AA77003FC375 /* Reptiles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Reptiles.txt; sourceTree = "<group>"; };
+		1A9B36E91919AA77003FC375 /* Restaurant.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Restaurant.txt; sourceTree = "<group>"; };
+		1A9B36EA1919AA77003FC375 /* Roadways.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Roadways.txt; sourceTree = "<group>"; };
+		1A9B36EB1919AA77003FC375 /* Rocks And Minerals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Rocks And Minerals.txt"; sourceTree = "<group>"; };
+		1A9B36EC1919AA77003FC375 /* Rooms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rooms.txt; sourceTree = "<group>"; };
+		1A9B36ED1919AA77003FC375 /* Said.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Said.txt; sourceTree = "<group>"; };
+		1A9B36EE1919AA77003FC375 /* School.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = School.txt; sourceTree = "<group>"; };
+		1A9B36EF1919AA77003FC375 /* Science.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Science.txt; sourceTree = "<group>"; };
+		1A9B36F01919AA77003FC375 /* Sewing.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sewing.txt; sourceTree = "<group>"; };
+		1A9B36F11919AA77003FC375 /* Shapes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Shapes.txt; sourceTree = "<group>"; };
+		1A9B36F21919AA77003FC375 /* Shoes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Shoes.txt; sourceTree = "<group>"; };
+		1A9B36F31919AA77003FC375 /* Spieces And Herbs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Spieces And Herbs.txt"; sourceTree = "<group>"; };
+		1A9B36F41919AA77003FC375 /* Sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sports.txt; sourceTree = "<group>"; };
+		1A9B36F51919AA77003FC375 /* Spring.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spring.txt; sourceTree = "<group>"; };
+		1A9B36F61919AA77003FC375 /* St. Patricks Day.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "St. Patricks Day.txt"; sourceTree = "<group>"; };
+		1A9B36F71919AA77003FC375 /* Stores And Publilc Buildings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Stores And Publilc Buildings.txt"; sourceTree = "<group>"; };
+		1A9B36F81919AA77003FC375 /* Summer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Summer.txt; sourceTree = "<group>"; };
+		1A9B36F91919AA77003FC375 /* Sweets.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sweets.txt; sourceTree = "<group>"; };
+		1A9B36FA1919AA77003FC375 /* Thanksgiving.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Thanksgiving.txt; sourceTree = "<group>"; };
+		1A9B36FB1919AA77003FC375 /* Time.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Time.txt; sourceTree = "<group>"; };
+		1A9B36FC1919AA77003FC375 /* Tools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tools.txt; sourceTree = "<group>"; };
+		1A9B36FD1919AA77003FC375 /* Transportation And Vehicles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Transportation And Vehicles.txt"; sourceTree = "<group>"; };
+		1A9B36FE1919AA77003FC375 /* Trees.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Trees.txt; sourceTree = "<group>"; };
+		1A9B36FF1919AA77003FC375 /* US Flag Day.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "US Flag Day.txt"; sourceTree = "<group>"; };
+		1A9B37001919AA77003FC375 /* US States.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "US States.txt"; sourceTree = "<group>"; };
+		1A9B37011919AA77003FC375 /* Vacation.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vacation.txt; sourceTree = "<group>"; };
+		1A9B37021919AA77003FC375 /* Valentine's Day.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Valentine's Day.txt"; sourceTree = "<group>"; };
+		1A9B37031919AA77003FC375 /* Vegetables.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vegetables.txt; sourceTree = "<group>"; };
+		1A9B37041919AA77003FC375 /* Verbs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Verbs.txt; sourceTree = "<group>"; };
+		1A9B37051919AA77003FC375 /* Virtues.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Virtues.txt; sourceTree = "<group>"; };
+		1A9B37061919AA77003FC375 /* Water.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Water.txt; sourceTree = "<group>"; };
+		1A9B37071919AA77003FC375 /* Weapons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weapons.txt; sourceTree = "<group>"; };
+		1A9B37081919AA77003FC375 /* Weather.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weather.txt; sourceTree = "<group>"; };
+		1A9B37091919AA77003FC375 /* Winter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Winter.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +503,7 @@
 				1A9B366E19186292003FC375 /* MNEndOfRoundTableViewController.m */,
 				1A9B3670191862AB003FC375 /* MNWinnerViewController.h */,
 				1A9B3671191862AB003FC375 /* MNWinnerViewController.m */,
+				1A9B36771919AA66003FC375 /* Words */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -222,6 +515,159 @@
 				1A9B365C191861CF003FC375 /* MNTeamsTableViewController.m */,
 			);
 			name = TeamsViewController;
+			sourceTree = "<group>";
+		};
+		1A9B36771919AA66003FC375 /* Words */ = {
+			isa = PBXGroup;
+			children = (
+				1A9B36781919AA77003FC375 /* Adjectives.txt */,
+				1A9B36791919AA77003FC375 /* Adverbs.txt */,
+				1A9B367A1919AA77003FC375 /* Alliterations.txt */,
+				1A9B367B1919AA77003FC375 /* Amphibians.txt */,
+				1A9B367C1919AA77003FC375 /* Anagrams.txt */,
+				1A9B367D1919AA77003FC375 /* Animals.txt */,
+				1A9B367E1919AA77003FC375 /* Antonyms.txt */,
+				1A9B367F1919AA77003FC375 /* April Fools.txt */,
+				1A9B36801919AA77003FC375 /* Art.txt */,
+				1A9B36811919AA77003FC375 /* Astronomy.txt */,
+				1A9B36821919AA77003FC375 /* Autumn.txt */,
+				1A9B36831919AA77003FC375 /* Backyard.txt */,
+				1A9B36841919AA77003FC375 /* Baseball.txt */,
+				1A9B36851919AA77003FC375 /* Bathroom.txt */,
+				1A9B36861919AA77003FC375 /* Beach.txt */,
+				1A9B36871919AA77003FC375 /* Big.txt */,
+				1A9B36881919AA77003FC375 /* Biomes.txt */,
+				1A9B36891919AA77003FC375 /* Birds.txt */,
+				1A9B368A1919AA77003FC375 /* Birthday.txt */,
+				1A9B368B1919AA77003FC375 /* Boats And Ships.txt */,
+				1A9B368C1919AA77003FC375 /* Body.txt */,
+				1A9B368D1919AA77003FC375 /* Buildings.txt */,
+				1A9B368E1919AA77003FC375 /* Business And Office.txt */,
+				1A9B368F1919AA77003FC375 /* Camping.txt */,
+				1A9B36901919AA77003FC375 /* Car Parts.txt */,
+				1A9B36911919AA77003FC375 /* Carnivals And Fairs.txt */,
+				1A9B36921919AA77003FC375 /* Cars.txt */,
+				1A9B36931919AA77003FC375 /* Castlels, Kings, And Queens.txt */,
+				1A9B36941919AA77003FC375 /* Cats.txt */,
+				1A9B36951919AA77003FC375 /* Chinese New Year.txt */,
+				1A9B36961919AA77003FC375 /* Christmas.txt */,
+				1A9B36971919AA77003FC375 /* Circus And Fairs.txt */,
+				1A9B36981919AA77003FC375 /* Clothing.txt */,
+				1A9B36991919AA77003FC375 /* Colors.txt */,
+				1A9B369A1919AA77003FC375 /* Columbus Day.txt */,
+				1A9B369B1919AA77003FC375 /* Compound Words.txt */,
+				1A9B369C1919AA77003FC375 /* Computers.txt */,
+				1A9B369D1919AA77003FC375 /* Conjunctions.txt */,
+				1A9B369E1919AA77003FC375 /* Constitution.txt */,
+				1A9B369F1919AA77003FC375 /* Containers.txt */,
+				1A9B36A01919AA77003FC375 /* Cooking Terms.txt */,
+				1A9B36A11919AA77003FC375 /* Cooking Tools.txt */,
+				1A9B36A21919AA77003FC375 /* Countries.txt */,
+				1A9B36A31919AA77003FC375 /* Dances.txt */,
+				1A9B36A41919AA77003FC375 /* Dentist.txt */,
+				1A9B36A51919AA77003FC375 /* Doctor.txt */,
+				1A9B36A61919AA77003FC375 /* Dogs.txt */,
+				1A9B36A71919AA77003FC375 /* Dolch Words.txt */,
+				1A9B36A81919AA77003FC375 /* Driving.txt */,
+				1A9B36A91919AA77003FC375 /* Duos.txt */,
+				1A9B36AA1919AA77003FC375 /* Election.txt */,
+				1A9B36AB1919AA77003FC375 /* Elements.txt */,
+				1A9B36AC1919AA77003FC375 /* Emotions and Feelings.txt */,
+				1A9B36AD1919AA77003FC375 /* Energy.txt */,
+				1A9B36AE1919AA77003FC375 /* Family.txt */,
+				1A9B36AF1919AA77003FC375 /* Farm.txt */,
+				1A9B36B01919AA77003FC375 /* Firefighting.txt */,
+				1A9B36B11919AA77003FC375 /* Fish.txt */,
+				1A9B36B21919AA77003FC375 /* Flowers.txt */,
+				1A9B36B31919AA77003FC375 /* Food.txt */,
+				1A9B36B41919AA77003FC375 /* Food Web: Food Chain.txt */,
+				1A9B36B51919AA77003FC375 /* Friends, Acquaintances and Other People.txt */,
+				1A9B36B61919AA77003FC375 /* Fruit.txt */,
+				1A9B36B71919AA77003FC375 /* Furniture.txt */,
+				1A9B36B81919AA77003FC375 /* Geography.txt */,
+				1A9B36B91919AA77003FC375 /* Good Luck.txt */,
+				1A9B36BA1919AA77003FC375 /* Grammar Terms.txt */,
+				1A9B36BB1919AA77003FC375 /* Groundhog Day.txt */,
+				1A9B36BC1919AA77003FC375 /* Halloween.txt */,
+				1A9B36BD1919AA77003FC375 /* Happy.txt */,
+				1A9B36BE1919AA77003FC375 /* Hats.txt */,
+				1A9B36BF1919AA77003FC375 /* Herbs and Spices.txt */,
+				1A9B36C01919AA77003FC375 /* Holidays.txt */,
+				1A9B36C11919AA77003FC375 /* House.txt */,
+				1A9B36C21919AA77003FC375 /* Household Devices.txt */,
+				1A9B36C31919AA77003FC375 /* Idioms.txt */,
+				1A9B36C41919AA77003FC375 /* Insects And Bugs.txt */,
+				1A9B36C51919AA77003FC375 /* Interjections.txt */,
+				1A9B36C61919AA77003FC375 /* Jobs.txt */,
+				1A9B36C71919AA77003FC375 /* Landforms.txt */,
+				1A9B36C81919AA77003FC375 /* Languages.txt */,
+				1A9B36C91919AA77003FC375 /* Leaders.txt */,
+				1A9B36CA1919AA77003FC375 /* Legal Terms.txt */,
+				1A9B36CB1919AA77003FC375 /* Long E Words.txt */,
+				1A9B36CC1919AA77003FC375 /* Long U Words.txt */,
+				1A9B36CD1919AA77003FC375 /* Mammals.txt */,
+				1A9B36CE1919AA77003FC375 /* Many.txt */,
+				1A9B36CF1919AA77003FC375 /* Martin Luther King Jr..txt */,
+				1A9B36D01919AA77003FC375 /* Math And Numbers.txt */,
+				1A9B36D11919AA77003FC375 /* Measurement.txt */,
+				1A9B36D21919AA77003FC375 /* Metals.txt */,
+				1A9B36D31919AA77003FC375 /* Military.txt */,
+				1A9B36D41919AA77003FC375 /* Money.txt */,
+				1A9B36D51919AA77003FC375 /* Mother's Day.txt */,
+				1A9B36D61919AA77003FC375 /* Music Theory.txt */,
+				1A9B36D71919AA77003FC375 /* Musical Instruments.txt */,
+				1A9B36D81919AA77003FC375 /* Negative Words.txt */,
+				1A9B36D91919AA77003FC375 /* New Years.txt */,
+				1A9B36DA1919AA77003FC375 /* Nouns That Are Verbs.txt */,
+				1A9B36DB1919AA77003FC375 /* Ocean.txt */,
+				1A9B36DC1919AA77003FC375 /* Palindromes.txt */,
+				1A9B36DD1919AA77003FC375 /* Personal Qualities.txt */,
+				1A9B36DE1919AA77003FC375 /* Phrasebook.txt */,
+				1A9B36DF1919AA77003FC375 /* Phrases.txt */,
+				1A9B36E01919AA77003FC375 /* Pirate.txt */,
+				1A9B36E11919AA77003FC375 /* Plants.txt */,
+				1A9B36E21919AA77003FC375 /* Positive Words.txt */,
+				1A9B36E31919AA77003FC375 /* Post Office.txt */,
+				1A9B36E41919AA77003FC375 /* Prepositions.txt */,
+				1A9B36E51919AA77003FC375 /* President's Day.txt */,
+				1A9B36E61919AA77003FC375 /* Pronouns.txt */,
+				1A9B36E71919AA77003FC375 /* Proverbs.txt */,
+				1A9B36E81919AA77003FC375 /* Reptiles.txt */,
+				1A9B36E91919AA77003FC375 /* Restaurant.txt */,
+				1A9B36EA1919AA77003FC375 /* Roadways.txt */,
+				1A9B36EB1919AA77003FC375 /* Rocks And Minerals.txt */,
+				1A9B36EC1919AA77003FC375 /* Rooms.txt */,
+				1A9B36ED1919AA77003FC375 /* Said.txt */,
+				1A9B36EE1919AA77003FC375 /* School.txt */,
+				1A9B36EF1919AA77003FC375 /* Science.txt */,
+				1A9B36F01919AA77003FC375 /* Sewing.txt */,
+				1A9B36F11919AA77003FC375 /* Shapes.txt */,
+				1A9B36F21919AA77003FC375 /* Shoes.txt */,
+				1A9B36F31919AA77003FC375 /* Spieces And Herbs.txt */,
+				1A9B36F41919AA77003FC375 /* Sports.txt */,
+				1A9B36F51919AA77003FC375 /* Spring.txt */,
+				1A9B36F61919AA77003FC375 /* St. Patricks Day.txt */,
+				1A9B36F71919AA77003FC375 /* Stores And Publilc Buildings.txt */,
+				1A9B36F81919AA77003FC375 /* Summer.txt */,
+				1A9B36F91919AA77003FC375 /* Sweets.txt */,
+				1A9B36FA1919AA77003FC375 /* Thanksgiving.txt */,
+				1A9B36FB1919AA77003FC375 /* Time.txt */,
+				1A9B36FC1919AA77003FC375 /* Tools.txt */,
+				1A9B36FD1919AA77003FC375 /* Transportation And Vehicles.txt */,
+				1A9B36FE1919AA77003FC375 /* Trees.txt */,
+				1A9B36FF1919AA77003FC375 /* US Flag Day.txt */,
+				1A9B37001919AA77003FC375 /* US States.txt */,
+				1A9B37011919AA77003FC375 /* Vacation.txt */,
+				1A9B37021919AA77003FC375 /* Valentine's Day.txt */,
+				1A9B37031919AA77003FC375 /* Vegetables.txt */,
+				1A9B37041919AA77003FC375 /* Verbs.txt */,
+				1A9B37051919AA77003FC375 /* Virtues.txt */,
+				1A9B37061919AA77003FC375 /* Water.txt */,
+				1A9B37071919AA77003FC375 /* Weapons.txt */,
+				1A9B37081919AA77003FC375 /* Weather.txt */,
+				1A9B37091919AA77003FC375 /* Winter.txt */,
+			);
+			name = Words;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,10 +747,156 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9B37251919AA77003FC375 /* Castlels, Kings, And Queens.txt in Resources */,
+				1A9B379B1919AA77003FC375 /* Winter.txt in Resources */,
+				1A9B374A1919AA77003FC375 /* Geography.txt in Resources */,
+				1A9B37821919AA77003FC375 /* Sewing.txt in Resources */,
+				1A9B37181919AA77003FC375 /* Beach.txt in Resources */,
+				1A9B37301919AA77003FC375 /* Constitution.txt in Resources */,
+				1A9B378C1919AA77003FC375 /* Thanksgiving.txt in Resources */,
+				1A9B37111919AA77003FC375 /* April Fools.txt in Resources */,
+				1A9B37651919AA77003FC375 /* Military.txt in Resources */,
+				1A9B37531919AA77003FC375 /* House.txt in Resources */,
+				1A9B37571919AA77003FC375 /* Interjections.txt in Resources */,
+				1A9B372F1919AA77003FC375 /* Conjunctions.txt in Resources */,
+				1A9B37481919AA77003FC375 /* Fruit.txt in Resources */,
+				1A9B371C1919AA77003FC375 /* Birthday.txt in Resources */,
+				1A9B375D1919AA77003FC375 /* Long E Words.txt in Resources */,
+				1A9B37351919AA77003FC375 /* Dances.txt in Resources */,
+				1A9B37861919AA77003FC375 /* Sports.txt in Resources */,
+				1A9B372B1919AA77003FC375 /* Colors.txt in Resources */,
+				1A9B37381919AA77003FC375 /* Dogs.txt in Resources */,
+				1A9B370D1919AA77003FC375 /* Amphibians.txt in Resources */,
+				1A9B37391919AA77003FC375 /* Dolch Words.txt in Resources */,
+				1A9B37771919AA77003FC375 /* President's Day.txt in Resources */,
+				1A9B37971919AA77003FC375 /* Virtues.txt in Resources */,
+				1A9B37421919AA77003FC375 /* Firefighting.txt in Resources */,
+				1A9B37721919AA77003FC375 /* Pirate.txt in Resources */,
+				1A9B37261919AA77003FC375 /* Cats.txt in Resources */,
+				1A9B377B1919AA77003FC375 /* Restaurant.txt in Resources */,
+				1A9B371D1919AA77003FC375 /* Boats And Ships.txt in Resources */,
+				1A9B37311919AA77003FC375 /* Containers.txt in Resources */,
+				1A9B376C1919AA77003FC375 /* Nouns That Are Verbs.txt in Resources */,
+				1A9B37901919AA77003FC375 /* Trees.txt in Resources */,
+				1A9B378A1919AA77003FC375 /* Summer.txt in Resources */,
+				1A9B370C1919AA77003FC375 /* Alliterations.txt in Resources */,
+				1A9B37281919AA77003FC375 /* Christmas.txt in Resources */,
+				1A9B371F1919AA77003FC375 /* Buildings.txt in Resources */,
+				1A9B37501919AA77003FC375 /* Hats.txt in Resources */,
+				1A9B37131919AA77003FC375 /* Astronomy.txt in Resources */,
+				1A9B375C1919AA77003FC375 /* Legal Terms.txt in Resources */,
+				1A9B37401919AA77003FC375 /* Family.txt in Resources */,
+				1A9B37441919AA77003FC375 /* Flowers.txt in Resources */,
+				1A9B37671919AA77003FC375 /* Mother's Day.txt in Resources */,
+				1A9B37961919AA77003FC375 /* Verbs.txt in Resources */,
+				1A9B378B1919AA77003FC375 /* Sweets.txt in Resources */,
+				1A9B372D1919AA77003FC375 /* Compound Words.txt in Resources */,
+				1A9B37411919AA77003FC375 /* Farm.txt in Resources */,
+				1A9B37611919AA77003FC375 /* Martin Luther King Jr..txt in Resources */,
+				1A9B37331919AA77003FC375 /* Cooking Tools.txt in Resources */,
+				1A9B37271919AA77003FC375 /* Chinese New Year.txt in Resources */,
+				1A9B377C1919AA77003FC375 /* Roadways.txt in Resources */,
+				1A9B37891919AA77003FC375 /* Stores And Publilc Buildings.txt in Resources */,
+				1A9B37511919AA77003FC375 /* Herbs and Spices.txt in Resources */,
+				1A9B375A1919AA77003FC375 /* Languages.txt in Resources */,
+				1A9B37881919AA77003FC375 /* St. Patricks Day.txt in Resources */,
+				1A9B370F1919AA77003FC375 /* Animals.txt in Resources */,
+				1A9B377F1919AA77003FC375 /* Said.txt in Resources */,
 				1A9B362C19185AA3003FC375 /* Main_iPad.storyboard in Resources */,
+				1A9B37871919AA77003FC375 /* Spring.txt in Resources */,
+				1A9B373B1919AA77003FC375 /* Duos.txt in Resources */,
+				1A9B371B1919AA77003FC375 /* Birds.txt in Resources */,
+				1A9B37991919AA77003FC375 /* Weapons.txt in Resources */,
 				1A9B363419185AA3003FC375 /* Images.xcassets in Resources */,
+				1A9B37451919AA77003FC375 /* Food.txt in Resources */,
+				1A9B37601919AA77003FC375 /* Many.txt in Resources */,
+				1A9B37361919AA77003FC375 /* Dentist.txt in Resources */,
+				1A9B371A1919AA77003FC375 /* Biomes.txt in Resources */,
+				1A9B370A1919AA77003FC375 /* Adjectives.txt in Resources */,
+				1A9B37851919AA77003FC375 /* Spieces And Herbs.txt in Resources */,
+				1A9B37931919AA77003FC375 /* Vacation.txt in Resources */,
+				1A9B37101919AA77003FC375 /* Antonyms.txt in Resources */,
+				1A9B37461919AA77003FC375 /* Food Web: Food Chain.txt in Resources */,
+				1A9B37581919AA77003FC375 /* Jobs.txt in Resources */,
+				1A9B37711919AA77003FC375 /* Phrases.txt in Resources */,
+				1A9B37291919AA77003FC375 /* Circus And Fairs.txt in Resources */,
+				1A9B370E1919AA77003FC375 /* Anagrams.txt in Resources */,
+				1A9B37491919AA77003FC375 /* Furniture.txt in Resources */,
+				1A9B377E1919AA77003FC375 /* Rooms.txt in Resources */,
+				1A9B37841919AA77003FC375 /* Shoes.txt in Resources */,
+				1A9B37791919AA77003FC375 /* Proverbs.txt in Resources */,
+				1A9B374E1919AA77003FC375 /* Halloween.txt in Resources */,
+				1A9B371E1919AA77003FC375 /* Body.txt in Resources */,
+				1A9B373E1919AA77003FC375 /* Emotions and Feelings.txt in Resources */,
+				1A9B37761919AA77003FC375 /* Prepositions.txt in Resources */,
+				1A9B37141919AA77003FC375 /* Autumn.txt in Resources */,
+				1A9B37801919AA77003FC375 /* School.txt in Resources */,
+				1A9B37231919AA77003FC375 /* Carnivals And Fairs.txt in Resources */,
+				1A9B37241919AA77003FC375 /* Cars.txt in Resources */,
+				1A9B376B1919AA77003FC375 /* New Years.txt in Resources */,
+				1A9B37751919AA77003FC375 /* Post Office.txt in Resources */,
+				1A9B37371919AA77003FC375 /* Doctor.txt in Resources */,
+				1A9B37591919AA77003FC375 /* Landforms.txt in Resources */,
+				1A9B373F1919AA77003FC375 /* Energy.txt in Resources */,
+				1A9B37521919AA77003FC375 /* Holidays.txt in Resources */,
+				1A9B37781919AA77003FC375 /* Pronouns.txt in Resources */,
+				1A9B375F1919AA77003FC375 /* Mammals.txt in Resources */,
+				1A9B37431919AA77003FC375 /* Fish.txt in Resources */,
+				1A9B378E1919AA77003FC375 /* Tools.txt in Resources */,
+				1A9B37681919AA77003FC375 /* Music Theory.txt in Resources */,
+				1A9B37471919AA77003FC375 /* Friends, Acquaintances and Other People.txt in Resources */,
+				1A9B37921919AA77003FC375 /* US States.txt in Resources */,
+				1A9B37911919AA77003FC375 /* US Flag Day.txt in Resources */,
+				1A9B37151919AA77003FC375 /* Backyard.txt in Resources */,
+				1A9B376A1919AA77003FC375 /* Negative Words.txt in Resources */,
+				1A9B378D1919AA77003FC375 /* Time.txt in Resources */,
+				1A9B374B1919AA77003FC375 /* Good Luck.txt in Resources */,
+				1A9B37731919AA77003FC375 /* Plants.txt in Resources */,
+				1A9B37831919AA77003FC375 /* Shapes.txt in Resources */,
+				1A9B374F1919AA77003FC375 /* Happy.txt in Resources */,
+				1A9B37741919AA77003FC375 /* Positive Words.txt in Resources */,
+				1A9B372A1919AA77003FC375 /* Clothing.txt in Resources */,
 				1A9B362919185AA3003FC375 /* Main_iPhone.storyboard in Resources */,
+				1A9B37661919AA77003FC375 /* Money.txt in Resources */,
+				1A9B37941919AA77003FC375 /* Valentine's Day.txt in Resources */,
+				1A9B37561919AA77003FC375 /* Insects And Bugs.txt in Resources */,
+				1A9B37981919AA77003FC375 /* Water.txt in Resources */,
+				1A9B37321919AA77003FC375 /* Cooking Terms.txt in Resources */,
+				1A9B37211919AA77003FC375 /* Camping.txt in Resources */,
+				1A9B372C1919AA77003FC375 /* Columbus Day.txt in Resources */,
+				1A9B37541919AA77003FC375 /* Household Devices.txt in Resources */,
+				1A9B370B1919AA77003FC375 /* Adverbs.txt in Resources */,
+				1A9B374C1919AA77003FC375 /* Grammar Terms.txt in Resources */,
+				1A9B37191919AA77003FC375 /* Big.txt in Resources */,
 				1A9B362019185AA3003FC375 /* InfoPlist.strings in Resources */,
+				1A9B376D1919AA77003FC375 /* Ocean.txt in Resources */,
+				1A9B379A1919AA77003FC375 /* Weather.txt in Resources */,
+				1A9B37341919AA77003FC375 /* Countries.txt in Resources */,
+				1A9B37221919AA77003FC375 /* Car Parts.txt in Resources */,
+				1A9B375E1919AA77003FC375 /* Long U Words.txt in Resources */,
+				1A9B373A1919AA77003FC375 /* Driving.txt in Resources */,
+				1A9B372E1919AA77003FC375 /* Computers.txt in Resources */,
+				1A9B37631919AA77003FC375 /* Measurement.txt in Resources */,
+				1A9B37201919AA77003FC375 /* Business And Office.txt in Resources */,
+				1A9B376F1919AA77003FC375 /* Personal Qualities.txt in Resources */,
+				1A9B374D1919AA77003FC375 /* Groundhog Day.txt in Resources */,
+				1A9B377A1919AA77003FC375 /* Reptiles.txt in Resources */,
+				1A9B37161919AA77003FC375 /* Baseball.txt in Resources */,
+				1A9B37811919AA77003FC375 /* Science.txt in Resources */,
+				1A9B37691919AA77003FC375 /* Musical Instruments.txt in Resources */,
+				1A9B37171919AA77003FC375 /* Bathroom.txt in Resources */,
+				1A9B37641919AA77003FC375 /* Metals.txt in Resources */,
+				1A9B373C1919AA77003FC375 /* Election.txt in Resources */,
+				1A9B37551919AA77003FC375 /* Idioms.txt in Resources */,
+				1A9B37621919AA77003FC375 /* Math And Numbers.txt in Resources */,
+				1A9B378F1919AA77003FC375 /* Transportation And Vehicles.txt in Resources */,
+				1A9B376E1919AA77003FC375 /* Palindromes.txt in Resources */,
+				1A9B37701919AA77003FC375 /* Phrasebook.txt in Resources */,
+				1A9B377D1919AA77003FC375 /* Rocks And Minerals.txt in Resources */,
+				1A9B375B1919AA77003FC375 /* Leaders.txt in Resources */,
+				1A9B37121919AA77003FC375 /* Art.txt in Resources */,
+				1A9B37951919AA77003FC375 /* Vegetables.txt in Resources */,
+				1A9B373D1919AA77003FC375 /* Elements.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
