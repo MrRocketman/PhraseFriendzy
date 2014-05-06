@@ -119,12 +119,8 @@
 			children = (
 				1A9B362419185AA3003FC375 /* MNAppDelegate.h */,
 				1A9B362519185AA3003FC375 /* MNAppDelegate.m */,
-				1A9B362719185AA3003FC375 /* Main_iPhone.storyboard */,
-				1A9B362A19185AA3003FC375 /* Main_iPad.storyboard */,
-				1A9B362D19185AA3003FC375 /* MNMasterViewController.h */,
-				1A9B362E19185AA3003FC375 /* MNMasterViewController.m */,
-				1A9B363019185AA3003FC375 /* MNDetailViewController.h */,
-				1A9B363119185AA3003FC375 /* MNDetailViewController.m */,
+				1A9B365019185AB7003FC375 /* Views */,
+				1A9B365119185ABE003FC375 /* ViewControllers */,
 				1A9B363319185AA3003FC375 /* Images.xcassets */,
 				1A9B361C19185AA3003FC375 /* Supporting Files */,
 			);
@@ -158,6 +154,26 @@
 				1A9B364319185AA3003FC375 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A9B365019185AB7003FC375 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A9B362719185AA3003FC375 /* Main_iPhone.storyboard */,
+				1A9B362A19185AA3003FC375 /* Main_iPad.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1A9B365119185ABE003FC375 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A9B362D19185AA3003FC375 /* MNMasterViewController.h */,
+				1A9B362E19185AA3003FC375 /* MNMasterViewController.m */,
+				1A9B363019185AA3003FC375 /* MNDetailViewController.h */,
+				1A9B363119185AA3003FC375 /* MNDetailViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
