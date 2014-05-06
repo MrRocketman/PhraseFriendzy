@@ -15,14 +15,22 @@
 		1A9B362619185AA3003FC375 /* MNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B362519185AA3003FC375 /* MNAppDelegate.m */; };
 		1A9B362919185AA3003FC375 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B362719185AA3003FC375 /* Main_iPhone.storyboard */; };
 		1A9B362C19185AA3003FC375 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B362A19185AA3003FC375 /* Main_iPad.storyboard */; };
-		1A9B362F19185AA3003FC375 /* MNMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B362E19185AA3003FC375 /* MNMasterViewController.m */; };
-		1A9B363219185AA3003FC375 /* MNDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B363119185AA3003FC375 /* MNDetailViewController.m */; };
 		1A9B363419185AA3003FC375 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B363319185AA3003FC375 /* Images.xcassets */; };
 		1A9B363B19185AA3003FC375 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9B363A19185AA3003FC375 /* XCTest.framework */; };
 		1A9B363C19185AA3003FC375 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9B361519185AA3003FC375 /* Foundation.framework */; };
 		1A9B363D19185AA3003FC375 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9B361919185AA3003FC375 /* UIKit.framework */; };
 		1A9B364519185AA3003FC375 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B364319185AA3003FC375 /* InfoPlist.strings */; };
 		1A9B364719185AA3003FC375 /* PhraseFriendzyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B364619185AA3003FC375 /* PhraseFriendzyTests.m */; };
+		1A9B365419186107003FC375 /* MNHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B365319186107003FC375 /* MNHomeViewController.m */; };
+		1A9B36571918612D003FC375 /* MNMultiPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B36561918612D003FC375 /* MNMultiPlayerViewController.m */; };
+		1A9B365D191861CF003FC375 /* MNTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B365C191861CF003FC375 /* MNTeamsTableViewController.m */; };
+		1A9B3660191861F3003FC375 /* MNTeamDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B365F191861F3003FC375 /* MNTeamDetailsTableViewController.m */; };
+		1A9B366319186212003FC375 /* MNCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B366219186212003FC375 /* MNCategoriesTableViewController.m */; };
+		1A9B366619186237003FC375 /* MNReadyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B366519186237003FC375 /* MNReadyTableViewController.m */; };
+		1A9B366919186265003FC375 /* MNGamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B366819186265003FC375 /* MNGamePlayViewController.m */; };
+		1A9B366F19186292003FC375 /* MNEndOfRoundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B366E19186292003FC375 /* MNEndOfRoundTableViewController.m */; };
+		1A9B3672191862AB003FC375 /* MNWinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B3671191862AB003FC375 /* MNWinnerViewController.m */; };
+		1A9B367619186562003FC375 /* MNDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B367519186562003FC375 /* MNDataObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,16 +56,32 @@
 		1A9B362519185AA3003FC375 /* MNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNAppDelegate.m; sourceTree = "<group>"; };
 		1A9B362819185AA3003FC375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		1A9B362B19185AA3003FC375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		1A9B362D19185AA3003FC375 /* MNMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNMasterViewController.h; sourceTree = "<group>"; };
-		1A9B362E19185AA3003FC375 /* MNMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNMasterViewController.m; sourceTree = "<group>"; };
-		1A9B363019185AA3003FC375 /* MNDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MNDetailViewController.h; sourceTree = "<group>"; };
-		1A9B363119185AA3003FC375 /* MNDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNDetailViewController.m; sourceTree = "<group>"; };
 		1A9B363319185AA3003FC375 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1A9B363919185AA3003FC375 /* PhraseFriendzyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhraseFriendzyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9B363A19185AA3003FC375 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1A9B364219185AA3003FC375 /* PhraseFriendzyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhraseFriendzyTests-Info.plist"; sourceTree = "<group>"; };
 		1A9B364419185AA3003FC375 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A9B364619185AA3003FC375 /* PhraseFriendzyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhraseFriendzyTests.m; sourceTree = "<group>"; };
+		1A9B365219186107003FC375 /* MNHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNHomeViewController.h; sourceTree = "<group>"; };
+		1A9B365319186107003FC375 /* MNHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNHomeViewController.m; sourceTree = "<group>"; };
+		1A9B36551918612D003FC375 /* MNMultiPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMultiPlayerViewController.h; sourceTree = "<group>"; };
+		1A9B36561918612D003FC375 /* MNMultiPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMultiPlayerViewController.m; sourceTree = "<group>"; };
+		1A9B365B191861CF003FC375 /* MNTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTeamsTableViewController.h; sourceTree = "<group>"; };
+		1A9B365C191861CF003FC375 /* MNTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTeamsTableViewController.m; sourceTree = "<group>"; };
+		1A9B365E191861F3003FC375 /* MNTeamDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTeamDetailsTableViewController.h; sourceTree = "<group>"; };
+		1A9B365F191861F3003FC375 /* MNTeamDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTeamDetailsTableViewController.m; sourceTree = "<group>"; };
+		1A9B366119186212003FC375 /* MNCategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCategoriesTableViewController.h; sourceTree = "<group>"; };
+		1A9B366219186212003FC375 /* MNCategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCategoriesTableViewController.m; sourceTree = "<group>"; };
+		1A9B366419186237003FC375 /* MNReadyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNReadyTableViewController.h; sourceTree = "<group>"; };
+		1A9B366519186237003FC375 /* MNReadyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNReadyTableViewController.m; sourceTree = "<group>"; };
+		1A9B366719186265003FC375 /* MNGamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNGamePlayViewController.h; sourceTree = "<group>"; };
+		1A9B366819186265003FC375 /* MNGamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNGamePlayViewController.m; sourceTree = "<group>"; };
+		1A9B366D19186292003FC375 /* MNEndOfRoundTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNEndOfRoundTableViewController.h; sourceTree = "<group>"; };
+		1A9B366E19186292003FC375 /* MNEndOfRoundTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNEndOfRoundTableViewController.m; sourceTree = "<group>"; };
+		1A9B3670191862AB003FC375 /* MNWinnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNWinnerViewController.h; sourceTree = "<group>"; };
+		1A9B3671191862AB003FC375 /* MNWinnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNWinnerViewController.m; sourceTree = "<group>"; };
+		1A9B367419186562003FC375 /* MNDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNDataObject.h; sourceTree = "<group>"; };
+		1A9B367519186562003FC375 /* MNDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNDataObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +143,8 @@
 			children = (
 				1A9B362419185AA3003FC375 /* MNAppDelegate.h */,
 				1A9B362519185AA3003FC375 /* MNAppDelegate.m */,
+				1A9B367419186562003FC375 /* MNDataObject.h */,
+				1A9B367519186562003FC375 /* MNDataObject.m */,
 				1A9B365019185AB7003FC375 /* Views */,
 				1A9B365119185ABE003FC375 /* ViewControllers */,
 				1A9B363319185AA3003FC375 /* Images.xcassets */,
@@ -168,12 +194,34 @@
 		1A9B365119185ABE003FC375 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1A9B362D19185AA3003FC375 /* MNMasterViewController.h */,
-				1A9B362E19185AA3003FC375 /* MNMasterViewController.m */,
-				1A9B363019185AA3003FC375 /* MNDetailViewController.h */,
-				1A9B363119185AA3003FC375 /* MNDetailViewController.m */,
+				1A9B365219186107003FC375 /* MNHomeViewController.h */,
+				1A9B365319186107003FC375 /* MNHomeViewController.m */,
+				1A9B36551918612D003FC375 /* MNMultiPlayerViewController.h */,
+				1A9B36561918612D003FC375 /* MNMultiPlayerViewController.m */,
+				1A9B36731918631C003FC375 /* TeamsViewController */,
+				1A9B365E191861F3003FC375 /* MNTeamDetailsTableViewController.h */,
+				1A9B365F191861F3003FC375 /* MNTeamDetailsTableViewController.m */,
+				1A9B366119186212003FC375 /* MNCategoriesTableViewController.h */,
+				1A9B366219186212003FC375 /* MNCategoriesTableViewController.m */,
+				1A9B366419186237003FC375 /* MNReadyTableViewController.h */,
+				1A9B366519186237003FC375 /* MNReadyTableViewController.m */,
+				1A9B366719186265003FC375 /* MNGamePlayViewController.h */,
+				1A9B366819186265003FC375 /* MNGamePlayViewController.m */,
+				1A9B366D19186292003FC375 /* MNEndOfRoundTableViewController.h */,
+				1A9B366E19186292003FC375 /* MNEndOfRoundTableViewController.m */,
+				1A9B3670191862AB003FC375 /* MNWinnerViewController.h */,
+				1A9B3671191862AB003FC375 /* MNWinnerViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1A9B36731918631C003FC375 /* TeamsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1A9B365B191861CF003FC375 /* MNTeamsTableViewController.h */,
+				1A9B365C191861CF003FC375 /* MNTeamsTableViewController.m */,
+			);
+			name = TeamsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +323,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A9B363219185AA3003FC375 /* MNDetailViewController.m in Sources */,
-				1A9B362F19185AA3003FC375 /* MNMasterViewController.m in Sources */,
+				1A9B366F19186292003FC375 /* MNEndOfRoundTableViewController.m in Sources */,
+				1A9B36571918612D003FC375 /* MNMultiPlayerViewController.m in Sources */,
+				1A9B365419186107003FC375 /* MNHomeViewController.m in Sources */,
+				1A9B3672191862AB003FC375 /* MNWinnerViewController.m in Sources */,
+				1A9B365D191861CF003FC375 /* MNTeamsTableViewController.m in Sources */,
+				1A9B367619186562003FC375 /* MNDataObject.m in Sources */,
 				1A9B362219185AA3003FC375 /* main.m in Sources */,
+				1A9B3660191861F3003FC375 /* MNTeamDetailsTableViewController.m in Sources */,
+				1A9B366919186265003FC375 /* MNGamePlayViewController.m in Sources */,
+				1A9B366319186212003FC375 /* MNCategoriesTableViewController.m in Sources */,
+				1A9B366619186237003FC375 /* MNReadyTableViewController.m in Sources */,
 				1A9B362619185AA3003FC375 /* MNAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +549,7 @@
 				1A9B364C19185AA3003FC375 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A9B364D19185AA3003FC375 /* Build configuration list for PBXNativeTarget "PhraseFriendzyTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +558,7 @@
 				1A9B364F19185AA3003FC375 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
