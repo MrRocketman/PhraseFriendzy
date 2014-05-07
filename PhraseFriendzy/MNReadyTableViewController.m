@@ -75,21 +75,43 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if(section == 0)
+    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
     {
-        return @"These Teams Are Playing";
+        if(section == 0)
+        {
+            return @"These Teams Are Playing";
+        }
+        else if(section == 1)
+        {
+            return @"This Is The Category Of Words";
+        }
+        else if(section == 2)
+        {
+            return @"Settings";
+        }
+        else if(section == 3)
+        {
+            return @"Ready?";
+        }
     }
-    else if(section == 1)
+    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
     {
-        return @"This Is The Category Of Words";
-    }
-    else if(section == 2)
-    {
-        return @"Settings";
-    }
-    else if(section == 3)
-    {
-        return @"Ready?";
+        if(section == 0)
+        {
+            return @"These People Are Playing";
+        }
+        else if(section == 1)
+        {
+            return @"This Is The Category Of Words";
+        }
+        else if(section == 2)
+        {
+            return @"Settings";
+        }
+        else if(section == 3)
+        {
+            return @"Ready?";
+        }
     }
     
     return @"";
@@ -125,7 +147,14 @@
         if(indexPath.section == 0)
         {
             cell = [tableView dequeueReusableCellWithIdentifier:@"TeamNameCell" forIndexPath:indexPath];
-            cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+            if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+            {
+                cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+            }
+            else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+            {
+                cell.textLabel.text = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+            }
         }
         else if(indexPath.section == 1)
         {

@@ -38,6 +38,15 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(teamNameEditingEnd:) name:@"TeamNameEditingEnd" object:nil];
+    
+    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+    {
+        self.navigationItem.title = @"Team Details";
+    }
+    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+    {
+        self.navigationItem.title = @"Player Details";
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
