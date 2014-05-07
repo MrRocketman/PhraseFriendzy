@@ -68,7 +68,7 @@
 
 - (void)updateTeamName:(NSString *)teamName
 {
-    if(self.teamIndex > 0)
+    if(self.teamIndex >= 0)
     {
         [[[MNDataObject sharedDataObject] teamNames] replaceObjectAtIndex:self.teamIndex withObject:teamName];
     }
