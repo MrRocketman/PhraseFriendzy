@@ -8,17 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
+#define DEFAULT_SECONDS_PER_ROUND 60
+#define DEFAULT_TOTAL_TIME 300
+
 typedef enum
 {
     kTeamPlay = 0,
     kIndividualPlay
 } GameMode;
 
+typedef enum
+{
+    kTimePerRound = 0,
+    kTotalTime
+} GameTime;
+
 @interface MNDataObject : NSObject
 
 + (MNDataObject *)sharedDataObject;
 
-@property(assign, nonatomic) GameMode gamemode;
+@property(assign, nonatomic) GameMode gameMode;
+@property(assign, nonatomic) GameTime gameTime;
+@property(assign, nonatomic) int timeLeft;
 
 @property(strong, nonatomic) NSMutableArray *teamNames;
 @property(strong, nonatomic) NSMutableArray *teamScores;

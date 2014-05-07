@@ -45,11 +45,18 @@
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"TeamsSegue"])
     {
-        [[MNDataObject sharedDataObject] setGamemode:kTeamPlay];
+        [[MNDataObject sharedDataObject] setGameMode:kTeamPlay];
+        [[MNDataObject sharedDataObject] setGameTime:kTimePerRound];
     }
     else if([segue.identifier isEqualToString:@"IndividualsSegue"])
     {
-        [[MNDataObject sharedDataObject] setGamemode:kIndividualPlay];
+        [[MNDataObject sharedDataObject] setGameMode:kIndividualPlay];
+        [[MNDataObject sharedDataObject] setGameTime:kTimePerRound];
+    }
+    else if([segue.identifier isEqualToString:@"IndividualsTimerSegue"])
+    {
+        [[MNDataObject sharedDataObject] setGameMode:kIndividualPlay];
+        [[MNDataObject sharedDataObject] setGameTime:kTotalTime];
     }
 }
 

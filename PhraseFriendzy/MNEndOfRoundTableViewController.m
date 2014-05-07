@@ -94,11 +94,11 @@
     if(indexPath.section == 0)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell" forIndexPath:indexPath];
-        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
         {
             cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
         }
-        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
         {
             cell.textLabel.text = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
         }
@@ -116,12 +116,12 @@
     else if(indexPath.section == 1)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"RightDetailCell" forIndexPath:indexPath];
-        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
         {
             cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue]];
         }
-        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
         {
             cell.textLabel.text = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue]];
@@ -144,13 +144,13 @@
         // Person tapped wrong team, change the scores
         if(self.selectedIndexPath != nil)
         {
-            if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+            if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
             {
                 int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue]] integerValue];
                 teamScore --;
                 [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue] withObject:@(teamScore)];
             }
-            else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+            else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
             {
                 int teamScore = (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue]] integerValue];
                 teamScore --;
@@ -161,13 +161,13 @@
         // Add a point to the team
         self.selectedIndexPath = indexPath;
         int teamScore;
-        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
         {
             teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue];
             teamScore ++;
             [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue] withObject:@(teamScore)];
         }
-        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
         {
             teamScore = (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue];
             teamScore ++;

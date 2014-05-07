@@ -16,7 +16,6 @@
 
 @property(assign, nonatomic) int currentWordIndex;
 @property(strong, nonatomic) NSTimer *timer;
-@property(assign, nonatomic) int timeLeft;
 @property(strong, nonatomic) AVAudioPlayer *audio;
 
 @end
@@ -41,6 +40,29 @@
     [self reset:nil];
     [self.timer setTolerance:0.1];
     
+    if([[MNDataObject sharedDataObject] gameTime] == kTotalTime)
+    {
+        [MNDataObject sharedDataObject].timeLeft = [[MNDataObject sharedDataObject] secondsPerRound];
+        
+        self.chooseNewWordButton.hidden = NO;
+        self.chooseNewWordButton.enabled = YES;
+        self.completeButton.hidden = NO;
+        self.completeButton.enabled = YES;
+        
+        self.nextWordButton.hidden = YES;
+        self.nextWordButton.enabled = NO;
+    }
+    else if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
+    {
+        self.chooseNewWordButton.hidden = YES;
+        self.chooseNewWordButton.enabled = NO;
+        self.completeButton.hidden = YES;
+        self.completeButton.enabled = NO;
+        
+        self.nextWordButton.hidden = NO;
+        self.nextWordButton.enabled = YES;
+    }
+    
     self.navigationItem.title = [[[MNDataObject sharedDataObject] category] stringByDeletingPathExtension];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reset:) name:@"NextRound" object:nil];
@@ -48,10 +70,13 @@
 
 - (void)reset:(NSNotification *)notification
 {
-    [self nextWordButtonPress:nil];
+    [self chooseNewWord];
     
-    self.timeLeft = [[MNDataObject sharedDataObject] secondsPerRound];
-    self.timeLeftLabel.text = [NSString stringWithFormat:@"Time Left: %d Sec", self.timeLeft];
+    if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
+    {
+        [MNDataObject sharedDataObject].timeLeft = [[MNDataObject sharedDataObject] secondsPerRound];
+    }
+    self.timeLeftLabel.text = [NSString stringWithFormat:@"Time Left: %d Sec", [MNDataObject sharedDataObject].timeLeft];
     self.timeLeftLabel.textColor = [UIColor greenColor];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTime:) userInfo:nil repeats:YES];
@@ -67,7 +92,7 @@
 {
     int numberOfAudioFiles = 4;
     int timeDivisionPerAudioFile = [[MNDataObject sharedDataObject] secondsPerRound] / numberOfAudioFiles;
-    int audioFileToPlay = self.timeLeft / timeDivisionPerAudioFile;
+    int audioFileToPlay = [MNDataObject sharedDataObject].timeLeft / timeDivisionPerAudioFile;
     NSString *soundFilePath;
     // For 12 audio files
     /*switch (audioFileToPlay)
@@ -139,47 +164,34 @@
 
 - (void)updateTime:(NSTimer *)aTimer
 {
-    self.timeLeft --;
-    self.timeLeftLabel.text = [NSString stringWithFormat:@"Time Left: %d Sec", self.timeLeft];
+    [MNDataObject sharedDataObject].timeLeft --;
+    self.timeLeftLabel.text = [NSString stringWithFormat:@"Time Left: %d Sec", [MNDataObject sharedDataObject].timeLeft];
     
     [self playAudio];
     
-    if(self.timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.75)
+    if([MNDataObject sharedDataObject].timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.75)
     {
         self.timeLeftLabel.textColor = [UIColor greenColor];
     }
-    else if(self.timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.5)
+    else if([MNDataObject sharedDataObject].timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.5)
     {
         self.timeLeftLabel.textColor = [UIColor blueColor];
     }
-    else if(self.timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.25)
+    else if([MNDataObject sharedDataObject].timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.25)
     {
         self.timeLeftLabel.textColor = [UIColor orangeColor];
     }
-    else if(self.timeLeft > 0)
+    else if([MNDataObject sharedDataObject].timeLeft > 0)
     {
         self.timeLeftLabel.textColor = [UIColor redColor];
     }
-    else if(self.timeLeft <= 0)
+    else if([MNDataObject sharedDataObject].timeLeft <= 0)
     {
         [self endEarlyButtonPress:nil];
     }
 }
 
-- (IBAction)endEarlyButtonPress:(id)sender
-{
-    [self.audio stop];
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFEnd1" ofType:@"m4a"];
-    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-    self.audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
-    self.audio.numberOfLoops = 0;
-    [self.audio play];
-    
-    [self performSegueWithIdentifier:@"EndOfRoundSegue" sender:nil];
-    [self.timer invalidate];
-}
-
-- (IBAction)nextWordButtonPress:(id)sender
+- (void)chooseNewWord
 {
     // Remove the old word
     if(self.currentWordIndex >= 0)
@@ -201,6 +213,41 @@
     
     // Update the label
     self.wordLabel.text = [[[[MNDataObject sharedDataObject] words] objectAtIndex:randomNumber] capitalizedString];
+}
+
+- (void)endRound
+{
+    [self.audio stop];
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFEnd1" ofType:@"m4a"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    self.audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+    self.audio.numberOfLoops = 0;
+    [self.audio play];
+    
+    [self performSegueWithIdentifier:@"EndOfRoundSegue" sender:nil];
+    [self.timer invalidate];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)endEarlyButtonPress:(id)sender
+{
+    [self endRound];
+}
+
+- (IBAction)nextWordButtonPress:(id)sender
+{
+    [self chooseNewWord];
+}
+
+- (IBAction)chooseNewWordButtonPress:(id)sender
+{
+    [self chooseNewWord];
+}
+
+- (IBAction)completeButtonPress:(id)sender
+{
+    [self endRound];
 }
 
 /*

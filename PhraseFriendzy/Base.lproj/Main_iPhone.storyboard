@@ -164,6 +164,17 @@
                                     <segue destination="pGg-6v-bdr" kind="push" identifier="IndividualsSegue" id="cVj-kx-UMy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEW-Qp-iPa">
+                                <rect key="frame" x="20" y="346" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Individuals Timer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pGg-6v-bdr" kind="push" identifier="IndividualsTimerSegue" id="fto-QO-JXj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -495,7 +506,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2d-WA-6PE">
-                                <rect key="frame" x="20" y="322" width="280" height="162"/>
+                                <rect key="frame" x="20" y="256" width="280" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -506,8 +517,32 @@
                                     <action selector="nextWordButtonPress:" destination="Zcv-Z0-eLs" eventType="touchUpInside" id="rgc-o5-dES"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Od-mp-QCu">
+                                <rect key="frame" x="20" y="256" width="280" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="New Word">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseNewWordButtonPress:" destination="Zcv-Z0-eLs" eventType="touchUpInside" id="u4b-J6-z4b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67r-PV-1UQ">
+                                <rect key="frame" x="20" y="376" width="280" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Complete!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeButtonPress:" destination="Zcv-Z0-eLs" eventType="touchUpInside" id="lkw-u5-0Tq"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a test label with a very long name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="21" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="6EH-I4-r2k">
-                                <rect key="frame" x="20" y="97" width="280" height="217"/>
+                                <rect key="frame" x="20" y="97" width="280" height="151"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <nil key="highlightedColor"/>
@@ -535,6 +570,8 @@
                     <navigationItem key="navigationItem" title="GamePlay" id="dm9-24-KOA"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="chooseNewWordButton" destination="3Od-mp-QCu" id="TM5-Qv-E07"/>
+                        <outlet property="completeButton" destination="67r-PV-1UQ" id="uHY-8n-Xtj"/>
                         <outlet property="endEarlyButton" destination="2yJ-TQ-WEk" id="cYd-p3-XeD"/>
                         <outlet property="nextWordButton" destination="S2d-WA-6PE" id="ZCh-CW-Smg"/>
                         <outlet property="timeLeftLabel" destination="WrK-RG-3qV" id="Ffi-vr-pez"/>
@@ -770,7 +807,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cVj-kx-UMy"/>
+        <segue reference="fto-QO-JXj"/>
         <segue reference="Pad-jr-FF2"/>
     </inferredMetricsTieBreakers>
 </document>

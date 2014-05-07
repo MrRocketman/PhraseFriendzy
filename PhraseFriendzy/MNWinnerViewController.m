@@ -31,7 +31,7 @@
     
     for(int i = 0; i < [[[MNDataObject sharedDataObject] selectedTeamsIndexes] count]; i ++)
     {
-        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
         {
             int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
             
@@ -41,7 +41,7 @@
                 self.myTextLabel.text = [NSString stringWithFormat:@"%@ Wins!!!", winningName];
             }
         }
-        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
         {
             int teamScore = (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
             

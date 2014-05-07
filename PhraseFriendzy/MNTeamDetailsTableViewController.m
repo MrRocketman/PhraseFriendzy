@@ -39,11 +39,11 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(teamNameEditingEnd:) name:@"TeamNameEditingEnd" object:nil];
     
-    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+    if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
     {
         self.navigationItem.title = @"Team Details";
     }
-    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+    else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
     {
         self.navigationItem.title = @"Player Details";
     }
@@ -79,23 +79,23 @@
 {
     if(self.teamIndex >= 0)
     {
-        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
         {
             [[[MNDataObject sharedDataObject] teamNames] replaceObjectAtIndex:self.teamIndex withObject:teamName];
         }
-        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
         {
             [[[MNDataObject sharedDataObject] playerNames] replaceObjectAtIndex:self.teamIndex withObject:teamName];
         }
     }
     else
     {
-        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
         {
             [[[MNDataObject sharedDataObject] teamNames] addObject:teamName];
             [[[MNDataObject sharedDataObject] teamScores] addObject:@0];
         }
-        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
         {
             [[[MNDataObject sharedDataObject] playerNames] addObject:teamName];
             [[[MNDataObject sharedDataObject] playerScores] addObject:@0];

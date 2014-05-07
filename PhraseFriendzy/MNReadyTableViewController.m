@@ -34,6 +34,15 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
+    {
+        [MNDataObject sharedDataObject].secondsPerRound = DEFAULT_SECONDS_PER_ROUND;
+    }
+    else if([[MNDataObject sharedDataObject] gameTime] == kTotalTime)
+    {
+        [MNDataObject sharedDataObject].secondsPerRound = DEFAULT_TOTAL_TIME;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,7 +84,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+    if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
     {
         if(section == 0)
         {
@@ -94,7 +103,7 @@
             return @"Ready?";
         }
     }
-    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+    else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
     {
         if(section == 0)
         {
@@ -132,11 +141,22 @@
         }
         else if(indexPath.row == 1)
         {
-            cell.titleLabel.text = @"Seconds Per Round";
-            [cell.stepper setValue:[[MNDataObject sharedDataObject] secondsPerRound]];
-            [cell.stepper setMinimumValue:5];
-            [cell.stepper setMaximumValue:120];
-            [cell stepperValueChange:nil];
+            if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
+            {
+                cell.titleLabel.text = @"Seconds Per Round";
+                [cell.stepper setValue:[[MNDataObject sharedDataObject] secondsPerRound]];
+                [cell.stepper setMinimumValue:5];
+                [cell.stepper setMaximumValue:120];
+                [cell stepperValueChange:nil];
+            }
+            else if([[MNDataObject sharedDataObject] gameTime] == kTotalTime)
+            {
+                cell.titleLabel.text = @"Total Minutes";
+                [cell.stepper setValue:[[MNDataObject sharedDataObject] secondsPerRound] / 60];
+                [cell.stepper setMinimumValue:1];
+                [cell.stepper setMaximumValue:60];
+                [cell stepperValueChange:nil];
+            }
         }
         
         return cell;
@@ -147,11 +167,11 @@
         if(indexPath.section == 0)
         {
             cell = [tableView dequeueReusableCellWithIdentifier:@"TeamNameCell" forIndexPath:indexPath];
-            if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+            if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
             {
                 cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
             }
-            else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+            else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
             {
                 cell.textLabel.text = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
             }
@@ -219,7 +239,15 @@
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"StartSegue"])
     {
-        [[MNDataObject sharedDataObject] setSecondsPerRound:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]] stepper] value]];
+        if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
+        {
+            [[MNDataObject sharedDataObject] setSecondsPerRound:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]] stepper] value]];
+        }
+        else if([[MNDataObject sharedDataObject] gameTime] == kTotalTime)
+        {
+            [[MNDataObject sharedDataObject] setSecondsPerRound:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]] stepper] value] * 60];
+        }
+        
         [[MNDataObject sharedDataObject] setScoreToWin:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]] stepper] value]];
     }
 }
