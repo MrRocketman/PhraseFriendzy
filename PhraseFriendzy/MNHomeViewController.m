@@ -39,6 +39,7 @@
 
 - (void)newGame:(NSNotification *)notification
 {
+    [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

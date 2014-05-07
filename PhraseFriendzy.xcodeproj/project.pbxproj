@@ -237,15 +237,7 @@
 				1A9B365319186107003FC375 /* MNHomeViewController.m */,
 				1A9B36551918612D003FC375 /* MNMultiPlayerViewController.h */,
 				1A9B36561918612D003FC375 /* MNMultiPlayerViewController.m */,
-				1A9B379F1919B3E3003FC375 /* Team Selection */,
-				1A9B37A31919DA32003FC375 /* Categories Selection */,
-				1A9B37A41919DCC7003FC375 /* Ready ViewController */,
-				1A9B366719186265003FC375 /* MNGamePlayViewController.h */,
-				1A9B366819186265003FC375 /* MNGamePlayViewController.m */,
-				1A9B366D19186292003FC375 /* MNEndOfRoundTableViewController.h */,
-				1A9B366E19186292003FC375 /* MNEndOfRoundTableViewController.m */,
-				1A9B3670191862AB003FC375 /* MNWinnerViewController.h */,
-				1A9B3671191862AB003FC375 /* MNWinnerViewController.m */,
+				1A9B37C6191ABF8A003FC375 /* Team Play */,
 				1A9B37C2191A029B003FC375 /* Audio */,
 			);
 			name = ViewControllers;
@@ -304,6 +296,30 @@
 				1A9B37B4191A027C003FC375 /* PFEnd1.m4a */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		1A9B37C5191ABF7D003FC375 /* GamePlay */ = {
+			isa = PBXGroup;
+			children = (
+				1A9B366719186265003FC375 /* MNGamePlayViewController.h */,
+				1A9B366819186265003FC375 /* MNGamePlayViewController.m */,
+				1A9B366D19186292003FC375 /* MNEndOfRoundTableViewController.h */,
+				1A9B366E19186292003FC375 /* MNEndOfRoundTableViewController.m */,
+				1A9B3670191862AB003FC375 /* MNWinnerViewController.h */,
+				1A9B3671191862AB003FC375 /* MNWinnerViewController.m */,
+			);
+			name = GamePlay;
+			sourceTree = "<group>";
+		};
+		1A9B37C6191ABF8A003FC375 /* Team Play */ = {
+			isa = PBXGroup;
+			children = (
+				1A9B379F1919B3E3003FC375 /* Team Selection */,
+				1A9B37A31919DA32003FC375 /* Categories Selection */,
+				1A9B37A41919DCC7003FC375 /* Ready ViewController */,
+				1A9B37C5191ABF7D003FC375 /* GamePlay */,
+			);
+			name = "Team Play";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
