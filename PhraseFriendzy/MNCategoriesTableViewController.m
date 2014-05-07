@@ -147,6 +147,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[MNDataObject sharedDataObject] setCategory:[[[MNDataObject sharedDataObject] filePaths] objectAtIndex:indexPath.row]];
+    [[MNDataObject sharedDataObject] reloadWordsForCurrentCategory];
 }
 
 /*

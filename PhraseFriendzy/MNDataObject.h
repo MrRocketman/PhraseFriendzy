@@ -23,5 +23,6 @@
 @property(assign, nonatomic) int secondsPerRound;
 
 - (void)updateFilePaths;
+- (void)reloadWordsForCurrentCategory;
 
 @end

@@ -67,6 +67,13 @@
     self.wordCountsPerFile = (NSArray *)wordCounts;
 }
 
+- (void)reloadWordsForCurrentCategory
+{
+    NSString *fullFilePath = [self fullFilePathForFile:self.category];
+    NSString *fileAsString = [[NSString alloc] initWithContentsOfFile:fullFilePath encoding:NSStringEncodingConversionAllowLossy error:nil];
+    self.words = [[NSMutableArray alloc] initWithArray:[fileAsString componentsSeparatedByString:@"\n"]];
+}
+
 #pragma mark - Private Methods
 
 - (NSString *)fullFilePathForFile:(NSString *)filePath

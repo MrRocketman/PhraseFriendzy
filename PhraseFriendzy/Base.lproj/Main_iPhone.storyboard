@@ -337,17 +337,34 @@
             </objects>
             <point key="canvasLocation" x="2535" y="64"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EEZ-gT-edY">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="kwl-cj-lKY" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="HxV-sT-gVH">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jgT-WG-xOe" kind="relationship" relationship="rootViewController" id="gu9-r4-5Y6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqP-8e-Wbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3500" y="-296"/>
+        </scene>
         <!--End Of Round Table View Controller - End Of Round-->
         <scene sceneID="ZqT-GR-pv5">
             <objects>
                 <tableViewController id="jgT-WG-xOe" customClass="MNEndOfRoundTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RVf-hI-f87">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="RVf-hI-f87">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TitleCell" textLabel="EDc-V7-WVP" style="IBUITableViewCellStyleDefault" id="HdC-EQ-H8h">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdC-EQ-H8h" id="P5n-PY-bwr">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -364,7 +381,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RightDetailCell" textLabel="7Pb-OC-ZSI" detailTextLabel="mI9-Zp-IeK" style="IBUITableViewCellStyleValue1" id="iCs-kl-P2q">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iCs-kl-P2q" id="h6V-8z-jgS">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -388,7 +405,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NextRoundCell" textLabel="nAR-aE-z54" style="IBUITableViewCellStyleDefault" id="Xha-05-dbB">
-                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xha-05-dbB" id="FSo-6B-YNd">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -403,9 +420,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Zcv-Z0-eLs" kind="push" id="1zf-FR-5a3"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -414,10 +428,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="End Of Round" id="sXb-nW-uoh"/>
+                    <connections>
+                        <segue destination="o2v-66-nSG" kind="push" identifier="WinnerSegue" id="Yw7-4l-pRe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMH-JA-gyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3493" y="-290"/>
+            <point key="canvasLocation" x="3986" y="-296"/>
         </scene>
         <!--Winner View Controller - Winner!-->
         <scene sceneID="EFG-ET-8dS">
@@ -445,15 +462,22 @@
                                 <state key="normal" title="New Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="newGameButtonPress:" destination="o2v-66-nSG" eventType="touchUpInside" id="yS6-kP-GRq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Winner!" id="B9h-hw-al2"/>
+                    <connections>
+                        <outlet property="myTextLabel" destination="to2-Sr-6in" id="CLk-0r-Xib"/>
+                        <outlet property="startNewGameButton" destination="QXo-mu-gjX" id="B5c-Tz-Blp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOb-Jd-JeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3500" y="434"/>
+            <point key="canvasLocation" x="4467" y="-296"/>
         </scene>
         <!--Game Play View Controller - GamePlay-->
         <scene sceneID="BUK-cB-8Om">
@@ -475,6 +499,9 @@
                                 <state key="normal" title="Next Word">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextWordButtonPress:" destination="Zcv-Z0-eLs" eventType="touchUpInside" id="rgc-o5-dES"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a test label with a very long name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="21" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="6EH-I4-r2k">
                                 <rect key="frame" x="20" y="97" width="280" height="217"/>
@@ -489,14 +516,27 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yJ-TQ-WEk">
+                                <rect key="frame" x="124" y="0.0" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="EndEarly">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="endEarlyButtonPress:" destination="Zcv-Z0-eLs" eventType="touchUpInside" id="gNw-tx-4dj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="GamePlay" id="dm9-24-KOA"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
-                        <segue destination="jgT-WG-xOe" kind="push" identifier="EndOfRoundSegue" id="8RZ-z8-Ptx"/>
-                        <segue destination="o2v-66-nSG" kind="push" identifier="WinnerSegue" id="FQN-22-cjp"/>
+                        <outlet property="endEarlyButton" destination="2yJ-TQ-WEk" id="cYd-p3-XeD"/>
+                        <outlet property="nextWordButton" destination="S2d-WA-6PE" id="ZCh-CW-Smg"/>
+                        <outlet property="timeLeftLabel" destination="WrK-RG-3qV" id="Ffi-vr-pez"/>
+                        <outlet property="wordLabel" destination="6EH-I4-r2k" id="XdP-td-3td"/>
+                        <segue destination="kwl-cj-lKY" kind="modal" identifier="EndOfRoundSegue" id="rxv-Ap-ohW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQ6-FO-C6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -685,6 +725,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Pad-jr-FF2"/>
-        <segue reference="PxK-8g-634"/>
     </inferredMetricsTieBreakers>
 </document>

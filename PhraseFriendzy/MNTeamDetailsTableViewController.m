@@ -75,6 +75,7 @@
     else
     {
         [[[MNDataObject sharedDataObject] teamNames] addObject:teamName];
+        [[[MNDataObject sharedDataObject] teamScores] addObject:@0];
     }
 }
 

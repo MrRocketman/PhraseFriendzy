@@ -10,4 +10,12 @@
 
 @interface MNGamePlayViewController : UIViewController
 
+@property(strong, nonatomic) IBOutlet UILabel *timeLeftLabel;
+@property(strong, nonatomic) IBOutlet UILabel *wordLabel;
+@property(strong, nonatomic) IBOutlet UIButton *nextWordButton;
+@property(strong, nonatomic) IBOutlet UIButton *endEarlyButton;
+
+- (IBAction)nextWordButtonPress:(id)sender;
+- (IBAction)endEarlyButtonPress:(id)sender;
+
 @end

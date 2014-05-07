@@ -7,8 +7,12 @@
 //
 
 #import "MNEndOfRoundTableViewController.h"
+#import "MNDataObject.h"
+#import "MNGamePlayViewController.h"
 
 @interface MNEndOfRoundTableViewController ()
+
+@property(strong, nonatomic) NSIndexPath *selectedIndexPath;
 
 @end
 
@@ -44,28 +48,90 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if(section == 0 || section == 1)
+    {
+        return [[[MNDataObject sharedDataObject] selectedTeamsIndexes] count];
+    }
+    
+    return 1;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell;
     
-    // Configure the cell...
+    if(indexPath.section == 0)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell" forIndexPath:indexPath];
+        cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+        
+        if(self.selectedIndexPath != nil && indexPath.row == self.selectedIndexPath.row)
+        {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        else
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
+    }
+    else if(indexPath.section == 1)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"RightDetailCell" forIndexPath:indexPath];
+        cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue]];
+    }
+    else if(indexPath.section == 2)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"NextRoundCell" forIndexPath:indexPath];
+    }
     
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if(indexPath.section == 0)
+    {
+        // Person tapped wrong team, change the scores
+        if(self.selectedIndexPath != nil)
+        {
+            int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue]] integerValue];
+            teamScore --;
+            [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue] withObject:@(teamScore)];
+        }
+        
+        // Add a point to the team
+        self.selectedIndexPath = indexPath;
+        int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue];
+        teamScore ++;
+        [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue] withObject:@(teamScore)];
+        
+        // Check to see who won here
+        if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
+        {
+            [self performSegueWithIdentifier:@"WinnerSegue" sender:nil];
+        }
+        
+        [self.tableView reloadData];
+    }
+    // Next Round Button
+    else if(indexPath.section == 2)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NextRound" object:nil userInfo:nil];
+        [self.parentViewController dismissViewControllerAnimated:YES completion:^{
+            //[[NSNotificationCenter defaultCenter] postNotificationName:@"NextRound" object:nil userInfo:nil];
+        }];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

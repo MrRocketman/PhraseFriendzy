@@ -10,4 +10,9 @@
 
 @interface MNWinnerViewController : UIViewController
 
+@property(strong, nonatomic) IBOutlet UILabel *myTextLabel;
+@property(strong, nonatomic) IBOutlet UIButton *startNewGameButton;
+
+- (IBAction)newGameButtonPress:(id)sender;
+
 @end

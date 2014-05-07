@@ -7,6 +7,7 @@
 //
 
 #import "MNWinnerViewController.h"
+#import "MNDataObject.h"
 
 @interface MNWinnerViewController ()
 
@@ -27,12 +28,28 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    for(int i = 0; i < [[[MNDataObject sharedDataObject] selectedTeamsIndexes] count]; i ++)
+    {
+        int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
+        
+        if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
+        {
+            NSString *winningName = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]];
+            self.myTextLabel.text = [NSString stringWithFormat:@"%@ Wins!!!", winningName];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)newGameButtonPress:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NewGame" object:nil userInfo:nil];
 }
 
 /*
