@@ -33,6 +33,8 @@
     {
         self.teamNames = [[NSMutableArray alloc] initWithObjects:@"Team 1", @"Team 2", nil];
         self.teamScores = [[NSMutableArray alloc] initWithObjects:@0, @0, nil];
+        self.scoreToWin = 10;
+        self.secondsPerRound = 60;
         
         // Finds the words directory
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

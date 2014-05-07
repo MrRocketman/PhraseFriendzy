@@ -77,10 +77,23 @@
     return 1;
 }
 
-/*- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Title";
-}*/
+    if(section == 0)
+    {
+        return @"Which Teams Are Playing?";
+    }
+    else if(section == 1)
+    {
+        return @"Need A New Team?";
+    }
+    else if(section == 2)
+    {
+        return @"Ready?";
+    }
+    
+    return @"";
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

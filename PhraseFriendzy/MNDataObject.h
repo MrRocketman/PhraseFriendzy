@@ -19,6 +19,8 @@
 @property(strong, nonatomic) NSMutableArray *words;
 @property(strong, nonatomic) NSArray *filePaths;
 @property(strong, nonatomic) NSArray *wordCountsPerFile;
+@property(assign, nonatomic) int scoreToWin;
+@property(assign, nonatomic) int secondsPerRound;
 
 - (void)updateFilePaths;
 
