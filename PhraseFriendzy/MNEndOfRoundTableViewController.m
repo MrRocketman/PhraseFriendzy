@@ -72,13 +72,13 @@
 {
     if(section == 0)
     {
-        return @"Who Won?";
+        return @"Choose Who Won";
     }
     else if(section == 1)
     {
         return @"Points";
     }
-    else if(section == 2)
+    else if(self.selectedIndexPath != nil && section == 2)
     {
         return @"Ready?";
     }

@@ -40,7 +40,6 @@
     self.currentWordIndex = -1;
     [self reset:nil];
     [self.timer setTolerance:0.1];
-    [self playAudio];
     
     self.navigationItem.title = [[[MNDataObject sharedDataObject] category] stringByDeletingPathExtension];
     
