@@ -8,6 +8,7 @@
 
 #import "MNCategoriesTableViewController.h"
 #import "MNDataObject.h"
+#import "MNCategoriesTableViewCell.h"
 
 @interface MNCategoriesTableViewController ()
 
@@ -136,8 +137,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell" forIndexPath:indexPath];
-    cell.textLabel.text = [[[[[MNDataObject sharedDataObject] filePaths] objectAtIndex:indexPath.row] stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+    MNCategoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyCategoryCell" forIndexPath:indexPath];
+    cell.myTextLabel.text = [[[[[MNDataObject sharedDataObject] filePaths] objectAtIndex:indexPath.row] stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+    cell.myDetailTextLabel.text = [NSString stringWithFormat:@"%lu Words", [[[[MNDataObject sharedDataObject] wordCountsPerFile] objectAtIndex:indexPath.row] integerValue]];
     
     return cell;
 }

@@ -18,6 +18,7 @@
 @property(strong, nonatomic) NSString *category;
 @property(strong, nonatomic) NSMutableArray *words;
 @property(strong, nonatomic) NSArray *filePaths;
+@property(strong, nonatomic) NSArray *wordCountsPerFile;
 
 - (void)updateFilePaths;
 

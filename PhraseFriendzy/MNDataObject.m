@@ -8,6 +8,12 @@
 
 #import "MNDataObject.h"
 
+@interface MNDataObject()
+
+@property(strong, nonatomic) NSString *wordsDirectory;
+
+@end
+
 @implementation MNDataObject
 
 + (MNDataObject *)sharedDataObject
@@ -28,6 +34,12 @@
         self.teamNames = [[NSMutableArray alloc] initWithObjects:@"Team 1", @"Team 2", nil];
         self.teamScores = [[NSMutableArray alloc] initWithObjects:@0, @0, nil];
         
+        // Finds the words directory
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        self.wordsDirectory = [NSString stringWithFormat:@"%@/words", documentsDirectory];
+        
+        // Finds the files names for the word files
         [self updateFilePaths];
     }
     
@@ -36,12 +48,28 @@
 
 - (void)updateFilePaths
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    // Load in the available word files paths
+    self.filePaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.wordsDirectory error:nil];
     
-    NSString *wordsDirectory = [NSString stringWithFormat:@"%@/words", documentsDirectory];
+    // Update the word counts while we are at it
+    NSMutableArray *wordCounts = [NSMutableArray new];
+    for(int i = 0; i < self.filePaths.count; i ++)
+    {
+        NSString *fullFilePath = [self fullFilePathForFile:self.filePaths[i]];
+        NSString *fileAsString = [[NSString alloc] initWithContentsOfFile:fullFilePath encoding:NSStringEncodingConversionAllowLossy error:nil];
+        NSArray *words = [fileAsString componentsSeparatedByString:@"\n"];
+        
+        [wordCounts addObject:@(words.count)];
+    }
     
-    self.filePaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:wordsDirectory error:nil];
+    self.wordCountsPerFile = (NSArray *)wordCounts;
+}
+
+#pragma mark - Private Methods
+
+- (NSString *)fullFilePathForFile:(NSString *)filePath
+{
+    return [NSString stringWithFormat:@"%@/%@", self.wordsDirectory, filePath];
 }
 
 @end

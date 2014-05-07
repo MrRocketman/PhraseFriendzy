@@ -32,6 +32,7 @@
 		1A9B3672191862AB003FC375 /* MNWinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B3671191862AB003FC375 /* MNWinnerViewController.m */; };
 		1A9B367619186562003FC375 /* MNDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B367519186562003FC375 /* MNDataObject.m */; };
 		1A9B379E1919AD8E003FC375 /* MNTeamNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B379D1919AD8E003FC375 /* MNTeamNameTableViewCell.m */; };
+		1A9B37A21919DA2C003FC375 /* MNCategoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9B37A11919DA2C003FC375 /* MNCategoriesTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		1A9B367519186562003FC375 /* MNDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNDataObject.m; sourceTree = "<group>"; };
 		1A9B379C1919AD8E003FC375 /* MNTeamNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTeamNameTableViewCell.h; sourceTree = "<group>"; };
 		1A9B379D1919AD8E003FC375 /* MNTeamNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTeamNameTableViewCell.m; sourceTree = "<group>"; };
+		1A9B37A01919DA2C003FC375 /* MNCategoriesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCategoriesTableViewCell.h; sourceTree = "<group>"; };
+		1A9B37A11919DA2C003FC375 /* MNCategoriesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCategoriesTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,8 +205,7 @@
 				1A9B36551918612D003FC375 /* MNMultiPlayerViewController.h */,
 				1A9B36561918612D003FC375 /* MNMultiPlayerViewController.m */,
 				1A9B379F1919B3E3003FC375 /* Team Selection */,
-				1A9B366119186212003FC375 /* MNCategoriesTableViewController.h */,
-				1A9B366219186212003FC375 /* MNCategoriesTableViewController.m */,
+				1A9B37A31919DA32003FC375 /* Categories Selection */,
 				1A9B366419186237003FC375 /* MNReadyTableViewController.h */,
 				1A9B366519186237003FC375 /* MNReadyTableViewController.m */,
 				1A9B366719186265003FC375 /* MNGamePlayViewController.h */,
@@ -227,6 +229,17 @@
 				1A9B379D1919AD8E003FC375 /* MNTeamNameTableViewCell.m */,
 			);
 			name = "Team Selection";
+			sourceTree = "<group>";
+		};
+		1A9B37A31919DA32003FC375 /* Categories Selection */ = {
+			isa = PBXGroup;
+			children = (
+				1A9B366119186212003FC375 /* MNCategoriesTableViewController.h */,
+				1A9B366219186212003FC375 /* MNCategoriesTableViewController.m */,
+				1A9B37A01919DA2C003FC375 /* MNCategoriesTableViewCell.h */,
+				1A9B37A11919DA2C003FC375 /* MNCategoriesTableViewCell.m */,
+			);
+			name = "Categories Selection";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9B37A21919DA2C003FC375 /* MNCategoriesTableViewCell.m in Sources */,
 				1A9B366F19186292003FC375 /* MNEndOfRoundTableViewController.m in Sources */,
 				1A9B36571918612D003FC375 /* MNMultiPlayerViewController.m in Sources */,
 				1A9B365419186107003FC375 /* MNHomeViewController.m in Sources */,
