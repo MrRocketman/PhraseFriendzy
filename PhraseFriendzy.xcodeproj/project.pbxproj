@@ -47,6 +47,7 @@
 		1A9B37BF191A027C003FC375 /* PFBeep1_330.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37B2191A027C003FC375 /* PFBeep1_330.m4a */; };
 		1A9B37C0191A027C003FC375 /* PFBeep1_360.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37B3191A027C003FC375 /* PFBeep1_360.m4a */; };
 		1A9B37C1191A027C003FC375 /* PFEnd1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1A9B37B4191A027C003FC375 /* PFEnd1.m4a */; };
+		1A9B37C4191A0325003FC375 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9B37C3191A0324003FC375 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		1A9B37B2191A027C003FC375 /* PFBeep1_330.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = PFBeep1_330.m4a; sourceTree = "<group>"; };
 		1A9B37B3191A027C003FC375 /* PFBeep1_360.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = PFBeep1_360.m4a; sourceTree = "<group>"; };
 		1A9B37B4191A027C003FC375 /* PFEnd1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = PFEnd1.m4a; sourceTree = "<group>"; };
+		1A9B37C3191A0324003FC375 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9B37C4191A0325003FC375 /* AudioToolbox.framework in Frameworks */,
 				1A9B361819185AA3003FC375 /* CoreGraphics.framework in Frameworks */,
 				1A9B361A19185AA3003FC375 /* UIKit.framework in Frameworks */,
 				1A9B361619185AA3003FC375 /* Foundation.framework in Frameworks */,
@@ -165,6 +168,7 @@
 		1A9B361419185AA3003FC375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A9B37C3191A0324003FC375 /* AudioToolbox.framework */,
 				1A9B361519185AA3003FC375 /* Foundation.framework */,
 				1A9B361719185AA3003FC375 /* CoreGraphics.framework */,
 				1A9B361919185AA3003FC375 /* UIKit.framework */,

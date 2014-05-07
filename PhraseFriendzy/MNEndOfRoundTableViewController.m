@@ -60,7 +60,30 @@
         return [[[MNDataObject sharedDataObject] selectedTeamsIndexes] count];
     }
     
-    return 1;
+    if(self.selectedIndexPath != nil && section == 2)
+    {
+        return 1;
+    }
+    
+    return 0;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section == 0)
+    {
+        return @"Who Won?";
+    }
+    else if(section == 1)
+    {
+        return @"Points";
+    }
+    else if(section == 2)
+    {
+        return @"Ready?";
+    }
+    
+    return @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

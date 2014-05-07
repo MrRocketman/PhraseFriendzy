@@ -9,12 +9,15 @@
 #import "MNGamePlayViewController.h"
 #import "MNDataObject.h"
 #include <stdlib.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface MNGamePlayViewController ()
 
 @property(assign, nonatomic) int currentWordIndex;
 @property(strong, nonatomic) NSTimer *timer;
 @property(assign, nonatomic) int timeLeft;
+@property(strong, nonatomic) AVAudioPlayer *audio;
 
 @end
 
@@ -37,6 +40,9 @@
     self.currentWordIndex = -1;
     [self reset:nil];
     [self.timer setTolerance:0.1];
+    [self playAudio];
+    
+    self.navigationItem.title = [[[MNDataObject sharedDataObject] category] stringByDeletingPathExtension];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reset:) name:@"NextRound" object:nil];
 }
@@ -58,21 +64,96 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)playAudio
+{
+    int numberOfAudioFiles = 4;
+    int timeDivisionPerAudioFile = [[MNDataObject sharedDataObject] secondsPerRound] / numberOfAudioFiles;
+    int audioFileToPlay = self.timeLeft / timeDivisionPerAudioFile;
+    NSString *soundFilePath;
+    // For 12 audio files
+    /*switch (audioFileToPlay)
+    {
+        case 11:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_30" ofType:@"m4a"];
+            break;
+        case 10:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_60" ofType:@"m4a"];
+            break;
+        case 9:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_90" ofType:@"m4a"];
+            break;
+        case 8:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_120" ofType:@"m4a"];
+            break;
+        case 7:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_150" ofType:@"m4a"];
+            break;
+        case 6:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_180" ofType:@"m4a"];
+            break;
+        case 5:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_210" ofType:@"m4a"];
+            break;
+        case 4:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_240" ofType:@"m4a"];
+            break;
+        case 3:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_270" ofType:@"m4a"];
+            break;
+        case 2:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_300" ofType:@"m4a"];
+            break;
+        case 1:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_330" ofType:@"m4a"];
+            break;
+        case 0:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_360" ofType:@"m4a"];
+            break;
+        default:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_30" ofType:@"m4a"];
+            break;
+    }*/
+    switch (audioFileToPlay)
+    {
+        case 3:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_30" ofType:@"m4a"];
+            break;
+        case 2:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_60" ofType:@"m4a"];
+            break;
+        case 1:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_120" ofType:@"m4a"];
+            break;
+        case 0:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_240" ofType:@"m4a"];
+            break;
+        default:
+            soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFBeep1_30" ofType:@"m4a"];
+            break;
+    }
+    
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    self.audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+    self.audio.numberOfLoops = 0;
+    [self.audio play];
+}
+
 - (void)updateTime:(NSTimer *)aTimer
 {
     self.timeLeft --;
-    
     self.timeLeftLabel.text = [NSString stringWithFormat:@"Time Left: %d Sec", self.timeLeft];
     
-    if(self.timeLeft > 45)
+    [self playAudio];
+    
+    if(self.timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.75)
     {
         self.timeLeftLabel.textColor = [UIColor greenColor];
     }
-    else if(self.timeLeft > 30)
+    else if(self.timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.5)
     {
         self.timeLeftLabel.textColor = [UIColor blueColor];
     }
-    else if(self.timeLeft > 15)
+    else if(self.timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.25)
     {
         self.timeLeftLabel.textColor = [UIColor orangeColor];
     }
@@ -88,6 +169,13 @@
 
 - (IBAction)endEarlyButtonPress:(id)sender
 {
+    [self.audio stop];
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"PFEnd1" ofType:@"m4a"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    self.audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+    self.audio.numberOfLoops = 0;
+    [self.audio play];
+    
     [self performSegueWithIdentifier:@"EndOfRoundSegue" sender:nil];
     [self.timer invalidate];
 }
