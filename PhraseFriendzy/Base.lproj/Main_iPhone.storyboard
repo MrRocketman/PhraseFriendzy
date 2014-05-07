@@ -150,7 +150,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pGg-6v-bdr" kind="push" id="k9H-dK-R5H"/>
+                                    <segue destination="pGg-6v-bdr" kind="push" identifier="TeamsSegue" id="k9H-dK-R5H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZB-vD-mgV">
@@ -160,6 +160,9 @@
                                 <state key="normal" title="Individuals">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="pGg-6v-bdr" kind="push" identifier="IndividualsSegue" id="cVj-kx-UMy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -767,6 +770,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="cVj-kx-UMy"/>
         <segue reference="Pad-jr-FF2"/>
     </inferredMetricsTieBreakers>
 </document>

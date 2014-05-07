@@ -38,7 +38,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.selectedTeams = [[NSMutableArray alloc] initWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0], nil];
+    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+    {
+        self.selectedTeams = [[NSMutableArray alloc] initWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0], nil];
+    }
+    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+    {
+        self.selectedTeams = [[NSMutableArray alloc] initWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0], [NSIndexPath indexPathForRow:2 inSection:0], nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -174,7 +181,7 @@
         {
             cell.textLabel.text = @"New Team";
         }
-        else if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
         {
             cell.textLabel.text = @"New Player";
         }
@@ -271,7 +278,14 @@
     if([segue.identifier isEqualToString:@"TeamAccessorySegue"])
     {
         MNTeamDetailsTableViewController *viewController = [segue destinationViewController];
-        viewController.teamName = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:self.selectedAccessoryIndexPath.row];
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            viewController.teamName = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:self.selectedAccessoryIndexPath.row];
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        {
+            viewController.teamName = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:self.selectedAccessoryIndexPath.row];
+        }
         viewController.teamIndex = (int)self.selectedAccessoryIndexPath.row;
     }
     else if([segue.identifier isEqualToString:@"NewTeamSegue"])

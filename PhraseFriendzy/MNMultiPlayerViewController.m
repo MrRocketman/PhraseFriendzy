@@ -7,6 +7,7 @@
 //
 
 #import "MNMultiPlayerViewController.h"
+#import "MNDataObject.h"
 
 @interface MNMultiPlayerViewController ()
 
@@ -35,7 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -43,7 +43,14 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"TeamsSegue"])
+    {
+        [[MNDataObject sharedDataObject] setGamemode:kTeamPlay];
+    }
+    else if([segue.identifier isEqualToString:@"IndividualsSegue"])
+    {
+        [[MNDataObject sharedDataObject] setGamemode:kIndividualPlay];
+    }
 }
-*/
 
 @end

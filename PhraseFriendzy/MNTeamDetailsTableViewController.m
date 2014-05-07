@@ -70,12 +70,27 @@
 {
     if(self.teamIndex >= 0)
     {
-        [[[MNDataObject sharedDataObject] teamNames] replaceObjectAtIndex:self.teamIndex withObject:teamName];
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            [[[MNDataObject sharedDataObject] teamNames] replaceObjectAtIndex:self.teamIndex withObject:teamName];
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        {
+            [[[MNDataObject sharedDataObject] playerNames] replaceObjectAtIndex:self.teamIndex withObject:teamName];
+        }
     }
     else
     {
-        [[[MNDataObject sharedDataObject] teamNames] addObject:teamName];
-        [[[MNDataObject sharedDataObject] teamScores] addObject:@0];
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            [[[MNDataObject sharedDataObject] teamNames] addObject:teamName];
+            [[[MNDataObject sharedDataObject] teamScores] addObject:@0];
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        {
+            [[[MNDataObject sharedDataObject] playerNames] addObject:teamName];
+            [[[MNDataObject sharedDataObject] playerScores] addObject:@0];
+        }
     }
 }
 
