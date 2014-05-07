@@ -7,6 +7,7 @@
 //
 
 #import "MNCategoriesTableViewController.h"
+#import "MNDataObject.h"
 
 @interface MNCategoriesTableViewController ()
 
@@ -32,6 +33,83 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Download the files for the first time
+    if([[[MNDataObject sharedDataObject] filePaths] count] == 0)
+    {
+        [self downloadWordFiles];
+    }
+}
+
+- (void)downloadWordFiles
+{
+    NSString *stringURL = @"http://makenub.com/phrasefriendzy/wordfiles";
+    
+    // Get the list of files
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"Downloading Started");
+        NSURL  *url = [NSURL URLWithString:stringURL];
+        NSData *urlData = [NSData dataWithContentsOfURL:url];
+        NSString *urlDataAsString = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"urlDataAsString:%@", urlDataAsString);
+        
+        // Parse the apache file links
+        NSError *error = NULL;
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(<a\\s[\\s\\S]*?href\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?" options:NSRegularExpressionCaseInsensitive error:&error];
+        [regex enumerateMatchesInString:urlDataAsString options:0 range:NSMakeRange(0, [urlDataAsString length]) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+            NSString *src = [urlDataAsString substringWithRange:[result rangeAtIndex:2]];
+            NSLog(@"src: %@", src);
+            // If it's a file link and not an 'up directory' link, donwload it
+            if([src characterAtIndex:0] != '/')
+            {
+                NSString *fileStringURL = [NSString stringWithFormat:@"%@/%@", stringURL, src];
+                [self downloadFileFromURL:fileStringURL];
+            }
+        }];
+        
+        // Update the table view
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
+}
+
+- (void)downloadFileFromURL:(NSString *)stringURL
+{
+    // Download the file in a seperate thread.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"Downloading Started");
+        NSURL  *url = [NSURL URLWithString:stringURL];
+        NSData *urlData = [NSData dataWithContentsOfURL:url];
+        if(urlData)
+        {
+            // Get the documents directory
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *documentsDirectory = [paths objectAtIndex:0];
+            
+            // Make the words directory if necessary
+            NSString *wordsDirectory = [NSString stringWithFormat:@"%@/words", documentsDirectory];
+            if(![[NSFileManager defaultManager] fileExistsAtPath:wordsDirectory])
+            {
+                [[NSFileManager defaultManager] createDirectoryAtPath:wordsDirectory withIntermediateDirectories:NO attributes:nil error:nil];
+            }
+            
+            NSString *filePath = [NSString stringWithFormat:@"%@/%@", wordsDirectory, [stringURL lastPathComponent]];
+            
+            // Save the file on the main thread
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [urlData writeToFile:filePath atomically:YES];
+                NSLog(@"%@ Saved!", [stringURL lastPathComponent]);
+                [self.tableView reloadData];
+            });
+        }
+    });
+}
+
+- (IBAction)refreshCategories:(id)sender
+{
+    [self downloadWordFiles];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +122,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    [[MNDataObject sharedDataObject] updateFilePaths];
+    
+    return [[[MNDataObject sharedDataObject] filePaths] count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCell" forIndexPath:indexPath];
+    cell.textLabel.text = [[[[[MNDataObject sharedDataObject] filePaths] objectAtIndex:indexPath.row] stringByDeletingPathExtension] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

@@ -27,9 +27,21 @@
     {
         self.teamNames = [[NSMutableArray alloc] initWithObjects:@"Team 1", @"Team 2", nil];
         self.teamScores = [[NSMutableArray alloc] initWithObjects:@0, @0, nil];
+        
+        [self updateFilePaths];
     }
     
     return self;
+}
+
+- (void)updateFilePaths
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *wordsDirectory = [NSString stringWithFormat:@"%@/words", documentsDirectory];
+    
+    self.filePaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:wordsDirectory error:nil];
 }
 
 @end

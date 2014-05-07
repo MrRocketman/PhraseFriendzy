@@ -17,5 +17,8 @@
 @property(strong, nonatomic) NSMutableArray *selectedTeamsIndexes;
 @property(strong, nonatomic) NSString *category;
 @property(strong, nonatomic) NSMutableArray *words;
+@property(strong, nonatomic) NSArray *filePaths;
+
+- (void)updateFilePaths;
 
 @end

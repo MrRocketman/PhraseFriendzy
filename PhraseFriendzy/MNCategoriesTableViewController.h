@@ -10,4 +10,6 @@
 
 @interface MNCategoriesTableViewController : UITableViewController
 
+- (IBAction)refreshCategories:(id)sender;
+
 @end

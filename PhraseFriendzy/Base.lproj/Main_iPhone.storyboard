@@ -306,7 +306,13 @@
                             <outlet property="delegate" destination="byv-Ae-TGv" id="tOd-IY-NgY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Categories" id="DaO-Sj-ppY"/>
+                    <navigationItem key="navigationItem" title="Categories" id="DaO-Sj-ppY">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="S8C-n7-0Md">
+                            <connections>
+                                <action selector="refreshCategories:" destination="byv-Ae-TGv" id="CNE-hj-CxM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCy-80-0LC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
