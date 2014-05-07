@@ -14,6 +14,7 @@
 
 @property(strong, nonatomic) NSMutableArray *teamNames;
 @property(strong, nonatomic) NSMutableArray *teamScores;
+@property(strong, nonatomic) NSMutableArray *selectedTeamsIndexes;
 @property(strong, nonatomic) NSString *category;
 @property(strong, nonatomic) NSMutableArray *words;
 

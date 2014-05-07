@@ -25,7 +25,8 @@
 {
     if(self = [super init])
     {
-        
+        self.teamNames = [[NSMutableArray alloc] initWithObjects:@"Team 1", @"Team 2", nil];
+        self.teamScores = [[NSMutableArray alloc] initWithObjects:@0, @0, nil];
     }
     
     return self;

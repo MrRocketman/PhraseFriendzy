@@ -7,8 +7,13 @@
 //
 
 #import "MNTeamsTableViewController.h"
+#import "MNDataObject.h"
+#import "MNTeamDetailsTableViewController.h"
 
 @interface MNTeamsTableViewController ()
+
+@property(strong, nonatomic) NSIndexPath *selectedAccessoryIndexPath;
+@property(strong, nonatomic) NSMutableArray *selectedTeams; // Array of NSIndexPaths
 
 @end
 
@@ -32,6 +37,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.selectedTeams = [[NSMutableArray alloc] initWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], [NSIndexPath indexPathForRow:1 inSection:0], nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +56,96 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    
+    if(self.selectedTeams.count >= 2)
+    {
+        return 3;
+    }
+    
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if(section == 0)
+    {
+        return [[[MNDataObject sharedDataObject] teamNames] count];
+    }
+    
+    return 1;
 }
 
-/*
+/*- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Title";
+}*/
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell;
+    if(indexPath.section == 0)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"TeamCell" forIndexPath:indexPath];
+        
+        cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:indexPath.row];
+        cell.accessoryType = UITableViewCellAccessoryDetailButton;
+        
+        for(NSIndexPath *selectedIndexPath in self.selectedTeams)
+        {
+            if(selectedIndexPath.row == indexPath.row)
+            {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+        }
+    }
+    else if(indexPath.section == 1)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"NewTeamCell" forIndexPath:indexPath];
+    }
+    else if(indexPath.section == 2)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"NextCell" forIndexPath:indexPath];
+    }
     
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedAccessoryIndexPath = indexPath;
+    
+    [self performSegueWithIdentifier:@"TeamAccessorySegue" sender:self];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if(indexPath.section == 0)
+    {
+        NSIndexPath *selectedIndexPath;
+        BOOL removed = NO;
+        for(int i = 0; i < self.selectedTeams.count; i ++)
+        {
+            selectedIndexPath = self.selectedTeams[i];
+            
+            if(selectedIndexPath.row == indexPath.row)
+            {
+                [self.selectedTeams removeObjectAtIndex:i];
+                removed = YES;
+            }
+        }
+        
+        if(!removed)
+        {
+            [self.selectedTeams addObject:indexPath];
+        }
+        
+        [self.tableView reloadData];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -105,7 +185,6 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -113,7 +192,29 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"TeamAccessorySegue"])
+    {
+        MNTeamDetailsTableViewController *viewController = [segue destinationViewController];
+        viewController.teamName = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:self.selectedAccessoryIndexPath.row];
+        viewController.teamIndex = (int)self.selectedAccessoryIndexPath.row;
+    }
+    else if([segue.identifier isEqualToString:@"NewTeamSegue"])
+    {
+        MNTeamDetailsTableViewController *viewController = [segue destinationViewController];
+        viewController.teamName = @"";
+        viewController.teamIndex = -1;
+    }
+    else if([segue.identifier isEqualToString:@"NextSegue"])
+    {
+        NSMutableArray *selectedTeamIndexes = [NSMutableArray new];
+        for(NSIndexPath *selectedIndexPath in self.selectedTeams)
+        {
+            [selectedTeamIndexes addObject:@(selectedIndexPath.row)];
+        }
+        
+        [[MNDataObject sharedDataObject] setSelectedTeamsIndexes:selectedTeamIndexes];
+    }
 }
-*/
 
 @end

@@ -7,8 +7,12 @@
 //
 
 #import "MNTeamDetailsTableViewController.h"
+#import "MNDataObject.h"
+#import "MNTeamNameTableViewCell.h"
 
 @interface MNTeamDetailsTableViewController ()
+
+@property(assign, nonatomic) BOOL poppingViewController;
 
 @end
 
@@ -32,6 +36,28 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(teamNameEditingEnd:) name:@"TeamNameEditingEnd" object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    if(!self.poppingViewController)
+    {
+        NSString *teamName = [[(MNTeamNameTableViewCell *)([self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]]) textField] text];
+        
+        [self updateTeamName:teamName];
+    }
+}
+
+- (void)teamNameEditingEnd:(NSNotification *)notification
+{
+    NSString *teamName = notification.userInfo[@"text"];
+    
+    [self updateTeamName:teamName];
+    
+    self.poppingViewController = YES;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,32 +66,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)updateTeamName:(NSString *)teamName
+{
+    if(self.teamIndex > 0)
+    {
+        [[[MNDataObject sharedDataObject] teamNames] replaceObjectAtIndex:self.teamIndex withObject:teamName];
+    }
+    else
+    {
+        [[[MNDataObject sharedDataObject] teamNames] addObject:teamName];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    MNTeamNameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TeamName" forIndexPath:indexPath];
+    cell.textField.text = self.teamName;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -105,9 +138,9 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

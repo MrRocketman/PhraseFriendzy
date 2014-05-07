@@ -10,4 +10,7 @@
 
 @interface MNTeamDetailsTableViewController : UITableViewController
 
+@property(strong, nonatomic) NSString *teamName;
+@property(assign, nonatomic) int teamIndex;
+
 @end
