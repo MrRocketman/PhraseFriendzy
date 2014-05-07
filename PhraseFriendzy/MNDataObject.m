@@ -33,7 +33,9 @@
     {
         self.teamNames = [[NSMutableArray alloc] initWithObjects:@"Team 1", @"Team 2", nil];
         self.teamScores = [[NSMutableArray alloc] initWithObjects:@0, @0, nil];
-        self.scoreToWin = 10;
+        self.playerNames = [[NSMutableArray alloc] initWithObjects:@"Player 1", @"Player 2", nil];
+        self.playerScores = [[NSMutableArray alloc] initWithObjects:@0, @0, nil];
+        self.scoreToWin = 7;
         self.secondsPerRound = 60;
         
         // Finds the words directory

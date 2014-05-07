@@ -43,6 +43,15 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+    {
+        self.navigationItem.title = @"Teams";
+    }
+    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+    {
+        self.navigationItem.title = @"Players";
+    }
+    
     [self.tableView reloadData];
 }
 
@@ -57,10 +66,19 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    
-    if(self.selectedTeams.count >= 2)
+    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
     {
-        return 3;
+        if(self.selectedTeams.count >= 2)
+        {
+            return 3;
+        }
+    }
+    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+    {
+        if(self.selectedTeams.count >= 3)
+        {
+            return 3;
+        }
     }
     
     return 2;
@@ -69,9 +87,19 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if(section == 0)
+    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
     {
-        return [[[MNDataObject sharedDataObject] teamNames] count];
+        if(section == 0)
+        {
+            return [[[MNDataObject sharedDataObject] teamNames] count];
+        }
+    }
+    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+    {
+        if(section == 0)
+        {
+            return [[[MNDataObject sharedDataObject] playerNames] count];
+        }
     }
     
     return 1;
@@ -79,17 +107,35 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if(section == 0)
+    if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
     {
-        return @"Which Teams Are Playing?";
+        if(section == 0)
+        {
+            return @"Which Teams Are Playing?";
+        }
+        else if(section == 1)
+        {
+            return @"Need A New Team?";
+        }
+        else if(section == 2)
+        {
+            return @"Ready?";
+        }
     }
-    else if(section == 1)
+    else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
     {
-        return @"Need A New Team?";
-    }
-    else if(section == 2)
-    {
-        return @"Ready?";
+        if(section == 0)
+        {
+            return @"Who is Playing?";
+        }
+        else if(section == 1)
+        {
+            return @"Need A New Player?";
+        }
+        else if(section == 2)
+        {
+            return @"Ready?";
+        }
     }
     
     return @"";
@@ -102,7 +148,14 @@
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"TeamCell" forIndexPath:indexPath];
         
-        cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:indexPath.row];
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:indexPath.row];
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        {
+            cell.textLabel.text = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:indexPath.row];
+        }
         cell.accessoryType = UITableViewCellAccessoryDetailButton;
         
         for(NSIndexPath *selectedIndexPath in self.selectedTeams)
@@ -116,6 +169,15 @@
     else if(indexPath.section == 1)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"NewTeamCell" forIndexPath:indexPath];
+        
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            cell.textLabel.text = @"New Team";
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            cell.textLabel.text = @"New Player";
+        }
     }
     else if(indexPath.section == 2)
     {
