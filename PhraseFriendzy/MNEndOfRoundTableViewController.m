@@ -90,10 +90,18 @@
 {
     UITableViewCell *cell;
     
+    // Show teams to allow user to select who won
     if(indexPath.section == 0)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell" forIndexPath:indexPath];
-        cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        {
+            cell.textLabel.text = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+        }
         
         if(self.selectedIndexPath != nil && indexPath.row == self.selectedIndexPath.row)
         {
@@ -104,11 +112,20 @@
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }
+    // Show team scores
     else if(indexPath.section == 1)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"RightDetailCell" forIndexPath:indexPath];
-        cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue]];
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            cell.textLabel.text = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue]];
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        {
+            cell.textLabel.text = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue]];
+        }
     }
     else if(indexPath.section == 2)
     {
@@ -127,16 +144,35 @@
         // Person tapped wrong team, change the scores
         if(self.selectedIndexPath != nil)
         {
-            int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue]] integerValue];
-            teamScore --;
-            [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue] withObject:@(teamScore)];
+            if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+            {
+                int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue]] integerValue];
+                teamScore --;
+                [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue] withObject:@(teamScore)];
+            }
+            else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+            {
+                int teamScore = (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue]] integerValue];
+                teamScore --;
+                [[[MNDataObject sharedDataObject] playerScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:self.selectedIndexPath.row] integerValue] withObject:@(teamScore)];
+            }
         }
         
         // Add a point to the team
         self.selectedIndexPath = indexPath;
-        int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue];
-        teamScore ++;
-        [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue] withObject:@(teamScore)];
+        int teamScore;
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
+        {
+            teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue];
+            teamScore ++;
+            [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue] withObject:@(teamScore)];
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        {
+            teamScore = (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue];
+            teamScore ++;
+            [[[MNDataObject sharedDataObject] playerScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue] withObject:@(teamScore)];
+        }
         
         // Check to see who won here
         if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
@@ -150,9 +186,7 @@
     else if(indexPath.section == 2)
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"NextRound" object:nil userInfo:nil];
-        [self.parentViewController dismissViewControllerAnimated:YES completion:^{
-            //[[NSNotificationCenter defaultCenter] postNotificationName:@"NextRound" object:nil userInfo:nil];
-        }];
+        [self.parentViewController dismissViewControllerAnimated:YES completion:NULL];
     }
 }
 

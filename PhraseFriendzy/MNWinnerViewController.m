@@ -31,12 +31,25 @@
     
     for(int i = 0; i < [[[MNDataObject sharedDataObject] selectedTeamsIndexes] count]; i ++)
     {
-        int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
-        
-        if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
+        if([[MNDataObject sharedDataObject] gamemode] == kTeamPlay)
         {
-            NSString *winningName = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]];
-            self.myTextLabel.text = [NSString stringWithFormat:@"%@ Wins!!!", winningName];
+            int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
+            
+            if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
+            {
+                NSString *winningName = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]];
+                self.myTextLabel.text = [NSString stringWithFormat:@"%@ Wins!!!", winningName];
+            }
+        }
+        else if([[MNDataObject sharedDataObject] gamemode] == kIndividualPlay)
+        {
+            int teamScore = (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
+            
+            if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
+            {
+                NSString *winningName = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]];
+                self.myTextLabel.text = [NSString stringWithFormat:@"%@ Wins!!!", winningName];
+            }
         }
     }
 }
