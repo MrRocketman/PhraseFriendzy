@@ -10,4 +10,6 @@
 
 @interface MNEndOfRoundTableViewController : UITableViewController
 
+@property(assign, nonatomic) BOOL skipScoring;
+
 @end

@@ -72,7 +72,14 @@
     }
     else if(section == 2)
     {
-        return 2;
+        if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
+        {
+            return 2;
+        }
+        else if([[MNDataObject sharedDataObject] gameTime] == kTotalTime)
+        {
+            return 1;
+        }
     }
     else if(section == 3)
     {
@@ -130,16 +137,8 @@
 {
     if(indexPath.section == 2)
     {
-        MNStepperTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StepperCell" forIndexPath:indexPath];;
+        MNStepperTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StepperCell" forIndexPath:indexPath];
         if(indexPath.row == 0)
-        {
-            cell.titleLabel.text = @"Score To Win";
-            [cell.stepper setValue:[[MNDataObject sharedDataObject] scoreToWin]];
-            [cell.stepper setMinimumValue:3];
-            [cell.stepper setMaximumValue:100];
-            [cell stepperValueChange:nil];
-        }
-        else if(indexPath.row == 1)
         {
             if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
             {
@@ -158,6 +157,15 @@
                 [cell stepperValueChange:nil];
             }
         }
+        else if(indexPath.row == 1)
+        {
+            cell.titleLabel.text = @"Score To Win";
+            [cell.stepper setValue:[[MNDataObject sharedDataObject] scoreToWin]];
+            [cell.stepper setMinimumValue:3];
+            [cell.stepper setMaximumValue:100];
+            [cell stepperValueChange:nil];
+        }
+        
         
         return cell;
     }
@@ -241,14 +249,14 @@
     {
         if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
         {
-            [[MNDataObject sharedDataObject] setSecondsPerRound:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]] stepper] value]];
+            [[MNDataObject sharedDataObject] setSecondsPerRound:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]] stepper] value]];
         }
         else if([[MNDataObject sharedDataObject] gameTime] == kTotalTime)
         {
-            [[MNDataObject sharedDataObject] setSecondsPerRound:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]] stepper] value] * 60];
+            [[MNDataObject sharedDataObject] setSecondsPerRound:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]] stepper] value] * 60];
         }
         
-        [[MNDataObject sharedDataObject] setScoreToWin:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]] stepper] value]];
+        [[MNDataObject sharedDataObject] setScoreToWin:(int)[[(MNStepperTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]] stepper] value]];
     }
 }
 

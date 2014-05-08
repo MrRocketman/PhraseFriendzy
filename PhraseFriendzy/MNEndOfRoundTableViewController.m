@@ -36,6 +36,15 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if([[MNDataObject sharedDataObject] gameTime] == kTotalTime)
+    {
+        // Check to see who won when time ran out
+        if([[MNDataObject sharedDataObject] timeLeft] <= 0)
+        {
+            [self performSegueWithIdentifier:@"WinnerSegue" sender:nil];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -160,7 +169,7 @@
         
         // Add a point to the team
         self.selectedIndexPath = indexPath;
-        int teamScore;
+        int teamScore = 0;
         if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
         {
             teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue]] integerValue];
@@ -174,10 +183,13 @@
             [[[MNDataObject sharedDataObject] playerScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:indexPath.row] integerValue] withObject:@(teamScore)];
         }
         
-        // Check to see who won here
-        if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
+        if([[MNDataObject sharedDataObject] gameTime] == kTimePerRound)
         {
-            [self performSegueWithIdentifier:@"WinnerSegue" sender:nil];
+            // Check to see who won here
+            if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
+            {
+                [self performSegueWithIdentifier:@"WinnerSegue" sender:nil];
+            }
         }
         
         [self.tableView reloadData];

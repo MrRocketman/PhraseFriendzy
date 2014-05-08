@@ -34,11 +34,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    self.currentWordIndex = -1;
-    [self reset:nil];
-    [self.timer setTolerance:0.1];
     
     if([[MNDataObject sharedDataObject] gameTime] == kTotalTime)
     {
@@ -63,6 +58,10 @@
         self.nextWordButton.enabled = YES;
     }
     
+    self.currentWordIndex = -1;
+    [self reset:nil];
+    [self.timer setTolerance:0.1];
+    
     self.navigationItem.title = [[[MNDataObject sharedDataObject] category] stringByDeletingPathExtension];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reset:) name:@"NextRound" object:nil];
@@ -77,7 +76,7 @@
         [MNDataObject sharedDataObject].timeLeft = [[MNDataObject sharedDataObject] secondsPerRound];
     }
     self.timeLeftLabel.text = [NSString stringWithFormat:@"Time Left: %d Sec", [MNDataObject sharedDataObject].timeLeft];
-    self.timeLeftLabel.textColor = [UIColor greenColor];
+    [self updateTimerLabelColor];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTime:) userInfo:nil repeats:YES];
 }
@@ -169,6 +168,16 @@
     
     [self playAudio];
     
+    [self updateTimerLabelColor];
+    
+    if([MNDataObject sharedDataObject].timeLeft <= 0)
+    {
+        [self endRound];
+    }
+}
+
+- (void)updateTimerLabelColor
+{
     if([MNDataObject sharedDataObject].timeLeft > [[MNDataObject sharedDataObject] secondsPerRound] * 0.75)
     {
         self.timeLeftLabel.textColor = [UIColor greenColor];
@@ -184,10 +193,6 @@
     else if([MNDataObject sharedDataObject].timeLeft > 0)
     {
         self.timeLeftLabel.textColor = [UIColor redColor];
-    }
-    else if([MNDataObject sharedDataObject].timeLeft <= 0)
-    {
-        [self endEarlyButtonPress:nil];
     }
 }
 
@@ -250,15 +255,15 @@
     [self endRound];
 }
 
-/*
 #pragma mark - Navigation
 
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+ */
 
 @end

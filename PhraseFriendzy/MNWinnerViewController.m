@@ -27,29 +27,54 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    int highestScoreTeamIndex = -1;
+    int highestScore = -1;
+    int teamScore = 0;
+    // TODO: Handles ties for kTotalTime
     for(int i = 0; i < [[[MNDataObject sharedDataObject] selectedTeamsIndexes] count]; i ++)
     {
         if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
         {
-            int teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
-            
-            if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
-            {
-                NSString *winningName = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]];
-                self.myTextLabel.text = [NSString stringWithFormat:@"%@ Wins!!!", winningName];
-            }
+            teamScore = (int)[[[[MNDataObject sharedDataObject] teamScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
         }
         else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
         {
-            int teamScore = (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
-            
-            if(teamScore >= [[MNDataObject sharedDataObject] scoreToWin])
-            {
-                NSString *winningName = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]];
-                self.myTextLabel.text = [NSString stringWithFormat:@"%@ Wins!!!", winningName];
-            }
+            teamScore = (int)[[[[MNDataObject sharedDataObject] playerScores] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue]] integerValue];
+        }
+        
+        // Find the highest score
+        if(teamScore > highestScore)
+        {
+            highestScore = teamScore;
+            highestScoreTeamIndex = i;
+        }
+    }
+    
+    // Set the winning name according to the highest score
+    NSString *winningName;
+    if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
+    {
+        winningName = [[[MNDataObject sharedDataObject] teamNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:highestScoreTeamIndex] integerValue]];
+    }
+    else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
+    {
+        winningName = [[[MNDataObject sharedDataObject] playerNames] objectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:highestScoreTeamIndex] integerValue]];
+    }
+    self.myTextLabel.text = [NSString stringWithFormat:@"%@ Wins!!!", winningName];
+    
+    // Reset the scores
+    for(int i = 0; i < [[[MNDataObject sharedDataObject] selectedTeamsIndexes] count]; i ++)
+    {
+        if([[MNDataObject sharedDataObject] gameMode] == kTeamPlay)
+        {
+            // Reset the team scores
+            [[[MNDataObject sharedDataObject] teamScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue] withObject:@(0)];
+        }
+        else if([[MNDataObject sharedDataObject] gameMode] == kIndividualPlay)
+        {
+            // Reset the player scores
+            [[[MNDataObject sharedDataObject] playerScores] replaceObjectAtIndex:[[[[MNDataObject sharedDataObject] selectedTeamsIndexes] objectAtIndex:i] integerValue] withObject:@(0)];
         }
     }
 }
